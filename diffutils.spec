@@ -51,7 +51,7 @@ trzema plikami. Diff3 moze byæ u¿yty np. w sytuacji kiedy dwie osoby
 wykona³y zmienê niezale¿nie od siebie na jednym pliku pozwalaj±c
 uzyskaæ po³±czon± listê zmian zawierajac± informacje o tym kto co
 zmieni³, a takze informacje o konfliktach miedzy tymi dwoma
-modyfikacjami. Polecenie sdiff s³u¿y do interakcyjnego ³aczenia dwuch
+modyfikacjami. Polecenie sdiff s³u¿y do interakcyjnego ³aczenia dwóch
 plików.
 
 %prep
@@ -69,12 +69,12 @@ autoconf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__install} -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
+install -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-%{__install} man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
-%{__install} man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
+install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
 gzip -9nf NEWS README
 
