@@ -46,10 +46,16 @@ make PR_PROGRAM=/usr/bin/pr
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/usr/man/{man1,pl/man1}
+
 make prefix=$RPM_BUILD_ROOT/usr install
 strip $RPM_BUILD_ROOT/usr/bin/*
 
-gzip -9nf $RPM_BUILD_ROOT/usr/info/diff*
+install man/*.1 $RPM_BUILD_ROOT/usr/man/man1
+install man/pl/*.1 $RPM_BUILD_ROOT/usr/man/pl/man1
+
+gzip -9nf $RPM_BUILD_ROOT/usr/info/diff* \
+	$RPM_BUILD_ROOT/usr/man/{man1/*,pl/man1/*}
 
 %post
 /sbin/install-info /usr/info/diff.info.gz /etc/info-dir
