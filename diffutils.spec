@@ -7,50 +7,54 @@ Name:		diffutils
 Version:	2.7
 Release:	18
 Group:		Utilities/Text
+Group(fr):	Utilitaires/Texte
 Group(pl):	Narzêdzia/Tekst
-Copyright:	GPL
-Source:		ftp://prep.ai.mit.edu/pub/gnu/diffutils/%{name}-%{version}.tar.gz
+License:	GPL
+Source0:	ftp://prep.ai.mit.edu/pub/gnu/diffutils/%{name}-%{version}.tar.gz
 Patch0:		diffutils-man.patch
 Patch1:		diffutils-info.patch
 Patch2:		diffutils-DESTDIR.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Diffutils includes four utilities:  diff, cmp, diff3 and sdiff. Diff
-compares two files and shows the differences, line by line. The cmp command
-shows the offset and line numbers where two files differ, or cmp can show
-the characters that differ between the two files. The diff3 command shows
-the differences between three files. Diff3 can be used when two people have
-made independent changes to a common original; diff3 can produce a merged
-file that contains both persons changes and warnings about conflicts. The
-sdiff command can be used to merge two files interactively.
+Diffutils includes four utilities: diff, cmp, diff3 and sdiff. Diff
+compares two files and shows the differences, line by line. The cmp
+command shows the offset and line numbers where two files differ, or
+cmp can show the characters that differ between the two files. The
+diff3 command shows the differences between three files. Diff3 can be
+used when two people have made independent changes to a common
+original; diff3 can produce a merged file that contains both persons
+changes and warnings about conflicts. The sdiff command can be used to
+merge two files interactively.
 
 Install diffutils if you need to compare text files.
 
 %description -l de
-Diffutils enthält 4 Utilities: diff, cmp, diff3 und sdiff. Diff vergleicht
-zwei Dateien und zeigt die Unterschiede, Zeile für Zeile. cmp zeigt Offset
-und Zeilennummern, in denen sich zwei Dateien unterscheiden, cmp kann auch
-die Zeichen zeigen, die sich unterscheiden. diff3 zeigt die Unterschiede
-zwischen 3 Dateien. Diff3 kann benutzt werden, wenn zwei Leute unabhängige
-Änderungen zu einem gemeinsamen Ursprung gemacht haben; diff3 kann eine
-Datei erzeugen, die die Änderungen beider Personen und Warnungen zu
-Konflikten enthält. Der sdiff-Befehl kann benutzt werden, um zwei Dateien
+Diffutils enthält 4 Utilities: diff, cmp, diff3 und sdiff. Diff
+vergleicht zwei Dateien und zeigt die Unterschiede, Zeile für Zeile.
+cmp zeigt Offset und Zeilennummern, in denen sich zwei Dateien
+unterscheiden, cmp kann auch die Zeichen zeigen, die sich
+unterscheiden. diff3 zeigt die Unterschiede zwischen 3 Dateien. Diff3
+kann benutzt werden, wenn zwei Leute unabhängige Änderungen zu einem
+gemeinsamen Ursprung gemacht haben; diff3 kann eine Datei erzeugen,
+die die Änderungen beider Personen und Warnungen zu Konflikten
+enthält. Der sdiff-Befehl kann benutzt werden, um zwei Dateien
 interaktiv zusammenzufügen.
 
-Installieren Sie diffutils, wenn Sie Text- oder Source-Dateien vergleichen
-müssen.
+Installieren Sie diffutils, wenn Sie Text- oder Source-Dateien
+vergleichen müssen.
 
 %description -l pl
-Diffutils zawiera nastêpuj±ce programy: diff, cmp, diff3 i sdiff. Diff s³u¿y
-do porównywania dwuch plików wy¶wietlaj±c ró¿nice miêdzy nimi linia po
-linii. Polecenie cmp numer bajtów na których wystepuj± ró¿nice miêdzy
-porównywanymi plikami. Diff3 pokazuje ró¿nice miedzy trzema plikami. Diff3
-moze byæ u¿yty np. w sytuacji kiedy dwie osoby wykona³y zmienê niezale¿nie
-od siebie na jednym pliku pozwalaj±c uzyskaæ po³±czon± listê zmian
-zawierajac± informacje o tym kto co zmieni³, a takze informacje o
-konfliktach miedzy tymi dwoma modyfikacjami. Polecenie sdiff s³u¿y do
-interakcyjnego ³aczenia dwuch plików.
+Diffutils zawiera nastêpuj±ce programy: diff, cmp, diff3 i sdiff. Diff
+s³u¿y do porównywania dwuch plików wy¶wietlaj±c ró¿nice miêdzy nimi
+linia po linii. Polecenie cmp numer bajtów na których wystepuj±
+ró¿nice miêdzy porównywanymi plikami. Diff3 pokazuje ró¿nice miedzy
+trzema plikami. Diff3 moze byæ u¿yty np. w sytuacji kiedy dwie osoby
+wykona³y zmienê niezale¿nie od siebie na jednym pliku pozwalaj±c
+uzyskaæ po³±czon± listê zmian zawierajac± informacje o tym kto co
+zmieni³, a takze informacje o konfliktach miedzy tymi dwoma
+modyfikacjami. Polecenie sdiff s³u¿y do interakcyjnego ³aczenia dwuch
+plików.
 
 %prep
 %setup -q
