@@ -1,0 +1,5 @@
+- new de translation from Mandrake Linux,
+- updated pl translation,
+- added DESTDIR patch,
+- added using %%configure macro,
+- diff.1 must belongs to this package (not to man-pages).
