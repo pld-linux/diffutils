@@ -5,7 +5,7 @@ Summary(pl):	narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
 Version:	2.7.2
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Text
 Group(de):	Applikationen/Text
