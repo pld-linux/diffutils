@@ -5,7 +5,7 @@ Summary(pl):	narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
 Version:	2.7
-Release:	17
+Release:	18
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
 Copyright:	GPL
@@ -69,7 +69,7 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/diff* \
 %post
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%preun
+%postun
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
