@@ -77,7 +77,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/
 # install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 # install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
 tar xzvf %{SOURCE1} -C $RPM_BUILD_ROOT%{_mandir}/
-tar xzvf %{SOURCE2} -C $RPM_BUILD_ROOT%{_mandir}/
+bzip2 -dc %{SOURCE2} | tar xvf - -C $RPM_BUILD_ROOT%{_mandir}/
 
 gzip -9nf NEWS README
 
