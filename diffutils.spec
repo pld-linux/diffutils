@@ -67,13 +67,13 @@ autoconf
 LDFLAGS="-s"; export LDFLAGS
 %configure
 
-make PR_PROGRAM=%{_bindir}/pr
+%{__make} PR_PROGRAM=%{_bindir}/pr
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
 
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
