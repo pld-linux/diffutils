@@ -5,7 +5,7 @@ Summary(pl):	Narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
 Version:	2.7.2
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://alpha.gnu.org/gnu/%{name}-%{version}.tar.gz
@@ -76,8 +76,6 @@ install -d $RPM_BUILD_ROOT%{_mandir}/
 tar xzvf %{SOURCE1} -C $RPM_BUILD_ROOT%{_mandir}/
 bzip2 -dc %{SOURCE2} | tar xvf - -C $RPM_BUILD_ROOT%{_mandir}/
 
-gzip -9nf NEWS README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -89,8 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {NEWS,README}.gz
-
+%doc NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/diff.info*
 %{_mandir}/man1/*
