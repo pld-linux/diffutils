@@ -7,6 +7,7 @@ Name:		diffutils
 Version:	2.7
 Release:	15
 Group:		Utilities/Text
+Group(pl):	Narzêdzia/Tekst
 Copyright:	GPL
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		diffutils-man.patch
@@ -39,7 +40,7 @@ pracuj± tylko na plikach tekstowych.
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure \
+./configure %{_target} \
 	--prefix=/usr 
 
 make PR_PROGRAM=/usr/bin/pr
