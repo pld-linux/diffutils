@@ -68,7 +68,8 @@ plików.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 bzip2 -dc %{SOURCE1} | tar xvf - -C $RPM_BUILD_ROOT%{_mandir}
 
