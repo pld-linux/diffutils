@@ -9,7 +9,9 @@ Release:	1
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://alpha.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
+# Source0-md5: a9c028579abc79ecd6842d60a13abf1d
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+# Source1-md5: 34a7ab56f975ff7e439ea13923ec8ae4
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/diffutils/
