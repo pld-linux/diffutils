@@ -1,7 +1,6 @@
-diff -Nru diffutils-2.7/Makefile.in diffutils-2.7.new/Makefile.in
---- diffutils-2.7/Makefile.in	Thu Sep 22 18:47:00 1994
-+++ diffutils-2.7.new/Makefile.in	Sat Sep 25 13:41:37 1999
-@@ -44,9 +44,9 @@
+--- diffutils-2.7.2/Makefile.in.orig	Mon Sep 14 08:59:43 1998
++++ diffutils-2.7.2/Makefile.in	Tue Jul  3 19:52:17 2001
+@@ -48,9 +48,9 @@
  exec_prefix = @exec_prefix@
  edit_program_name = sed '@program_transform_name@'
  
@@ -11,24 +10,29 @@ diff -Nru diffutils-2.7/Makefile.in diffutils-2.7.new/Makefile.in
 -infodir = $(prefix)/info
 +infodir = @infodir@
  
+ DEFAULT_DIFF_PROGRAM = $(bindir)/`echo diff | $(edit_program_name)`
  DEFAULT_EDITOR_PROGRAM = ed
- DIFF_PROGRAM = $(bindir)/`echo diff | $(edit_program_name)`
-@@ -141,15 +141,15 @@
+@@ -181,20 +181,16 @@
  
  install: all installdirs
  	for p in $(PROGRAMS); do \
 -	  $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p | $(edit_program_name)`; \
 +	  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p | $(edit_program_name)`; \
  	done
- 	{ test -f diff.info || cd $(srcdir); } && \
- 	for f in diff.info*; do \
--	  $(INSTALL_DATA) $$f $(infodir)/$$f; \
-+	  $(INSTALL_DATA) $$f $(DESTDIR)$(infodir)/$$f; \
- 	done
+ 	if test -f diff.info; then d=.; else :; d=$(srcdir); fi; \
+-	$(INSTALL_DATA) $$d/diff.info $(infodir)/diff.info; \
+-	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; \
+-	then install-info --dir-file=$(infodir) $$d/diff.info; \
+-	else :; \
+-	fi
++	$(INSTALL_DATA) $$d/diff.info $(DESTDIR)$(infodir)/diff.info
+ 
+ install-strip:
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' install
  
  installdirs:
--	$(SHELL) ${srcdir}/mkinstalldirs $(bindir) $(infodir)
-+	$(SHELL) ${srcdir}/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(infodir)
+-	$(SHELL) $(srcdir)/mkinstalldirs $(bindir) $(infodir)
++	$(SHELL) $(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(infodir)
  
  # We need more tests.
- check:
+ check: $(PROGRAMS)
