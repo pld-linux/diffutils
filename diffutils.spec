@@ -13,7 +13,7 @@ Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
 Source0:	ftp://alpha.gnu.org/gnu/%{name}-%{version}.tar.gz
 Source1:	%{name}-man-pages.tar.gz
-Source2:	%{name}-non-english-man-pages.tar.gz
+Source2:	%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-immunix-owl-tmp.patch
