@@ -15,6 +15,8 @@ Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-ma
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/diffutils/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,6 +61,9 @@ plików.
 %patch1 -p1
 
 %build
+%{__aclocal} -I m4
+%{__autoconf}
+%{__automake}
 %configure \
 	PR_PROGRAM=/usr/bin/pr
 
