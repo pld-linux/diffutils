@@ -43,14 +43,14 @@ CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target} \
 	--prefix=/usr 
 
-make PR_PROGRAM=/usr/bin/pr
+make PR_PROGRAM=%{_bindir}/pr
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
 
 make prefix=$RPM_BUILD_ROOT/usr install
-strip $RPM_BUILD_ROOT/usr/bin/*
+strip $RPM_BUILD_ROOT%{_bindir}/*
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
@@ -72,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NEWS README
-%attr(755,root,root) /usr/bin/*
+%attr(755,root,root) %{_bindir}/*
 %{_infodir}/diff.info*gz
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
@@ -98,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 - fixed spec file to reference/use the $RPM_BUILD_ROOT always
 
 * Wed Dec 31 1997 Otto Hammersmith <otto@redhat.com>
-- fixed where it looks for 'pr' (/usr/bin, rather than /bin)
+- fixed where it looks for 'pr' (%{_bindir}, rather than /bin)
 
 * Fri Oct 17 1997 Donnie Barnes <djb@redhat.com>
 - added BuildRoot
