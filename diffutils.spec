@@ -4,18 +4,15 @@ Summary(fr):	Utilitaires diff de GNU
 Summary(pl):	Narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
-Version:	2.7.2
-Release:	6
+Version:	2.8.4
+Release:	1
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://alpha.gnu.org/gnu/%{name}-%{version}.tar.gz
-Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-man-pages.tar.gz
-Source2:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
+Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-DESTDIR.patch
-Patch2:		%{name}-immunix-owl-tmp.patch
+Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/diffutils/
-BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,37 +41,35 @@ interaktiv zusammenzufügen.
 %description -l pl
 Diffutils zawiera nastêpuj±ce programy: diff, cmp, diff3 i sdiff. diff
 s³u¿y do porównywania dwóch plików wy¶wietlaj±c ró¿nice miêdzy nimi
-linia po linii. Polecenie cmp numer bajtów na których wystepuj±
-ró¿nice miêdzy porównywanymi plikami. diff3 pokazuje ró¿nice miedzy
-trzema plikami. diff3 moze byæ u¿yty np. w sytuacji kiedy dwie osoby
-wykona³y zmianê niezale¿nie od siebie na jednym pliku, pozwalaj±c
-uzyskaæ po³±czon± listê zmian zawierajac± informacje o tym, kto co
-zmieni³, a takze informacje o konfliktach miedzy tymi dwoma
-modyfikacjami. Polecenie sdiff s³u¿y do interakcyjnego ³aczenia dwóch
+linia po linii. Polecenie cmp podaje numery bajtów na których
+wystêpuj± ró¿nice miêdzy porównywanymi plikami. diff3 pokazuje ró¿nice
+miedzy trzema plikami. diff3 mo¿e byæ u¿yty np. w sytuacji kiedy dwie
+osoby wykona³y zmianê niezale¿nie od siebie na jednym pliku,
+pozwalaj±c uzyskaæ po³±czon± listê zmian zawieraj±c± informacje o tym,
+kto co zmieni³, a tak¿e informacje o konfliktach miedzy tymi dwoma
+modyfikacjami. Polecenie sdiff s³u¿y do interakcyjnego ³±czenia dwóch
 plików.
 
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
-%{__autoconf}
-%configure
+%configure \
+	PR_PROGRAM=/usr/bin/pr
 
-%{__make} PR_PROGRAM=%{_bindir}/pr
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/
+install -d $RPM_BUILD_ROOT%{_mandir}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-# install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
-# install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
-tar xzvf %{SOURCE1} -C $RPM_BUILD_ROOT%{_mandir}/
-bzip2 -dc %{SOURCE2} | tar xvf - -C $RPM_BUILD_ROOT%{_mandir}/
+bzip2 -dc %{SOURCE1} | tar xvf - -C $RPM_BUILD_ROOT%{_mandir}
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -85,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) %{_bindir}/*

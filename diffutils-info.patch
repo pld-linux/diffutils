@@ -1,17 +1,27 @@
-diff -Nru diffutils-2.7/diff.texi diffutils-2.7.new/diff.texi
---- diffutils-2.7/diff.texi	Fri Sep 30 21:54:40 1994
-+++ diffutils-2.7.new/diff.texi	Fri Apr  2 15:59:41 1999
-@@ -34,6 +34,13 @@
- by the Foundation.
- @end ifinfo
+--- diffutils-2.8.4/doc/diff.texi.orig	Mon Jun 17 07:55:42 2002
++++ diffutils-2.8.4/doc/diff.texi	Sun Apr 13 16:33:29 2003
+@@ -35,18 +35,13 @@
  
-+@ifinfo
+ @c Debian install-info (up through at least version 1.9.20) uses only the
+ @c first dircategory.  Put this one first, as it is more useful in practice.
+-@dircategory Individual utilities
 +@dircategory File utilities:
-+@direntry
-+* diffutils: (diff).			The GNU diff utilities
-+@end direntry
-+@end ifinfo
-+
+ @direntry
+-* cmp: (diff)Invoking cmp.                      Compare 2 files byte by byte.
+-* diff: (diff)Invoking diff.                    Compare 2 files line by line.
+-* diff3: (diff)Invoking diff3.                  Compare 3 files line by line.
+-* patch: (diff)Invoking patch.                  Apply a patch to a file.
+-* sdiff: (diff)Invoking sdiff.                  Merge 2 files side-by-side.
+-@end direntry
+-
+-@dircategory GNU packages
+-@direntry
+-* Diff: (diff).                 Comparing and merging files.
++* cmp: (diff)cmp.			Compare 2 files byte by byte
++* diff: (diff)diff.			Compare 2 files line by line
++* diff3: (diff)diff3.			Compare 3 files line by line
++* patch: (diff)patch.			Apply a patch to a file
++* sdiff: (diff)sdiff.			Merge 2 files side-by-side
+ @end direntry
+ 
  @titlepage
- @title Comparing and Merging Files
- @subtitle @code{diff}, @code{diff3}, @code{sdiff}, @code{cmp}, and @code{patch}
