@@ -1,5 +1,5 @@
---- diffutils-2.8.4/doc/diff.texi.orig	Mon Jun 17 07:55:42 2002
-+++ diffutils-2.8.4/doc/diff.texi	Sun Apr 13 16:33:29 2003
+--- diffutils-2.8.7/doc/diff.texi.orig	2004-04-12 09:44:35.000000000 +0200
++++ diffutils-2.8.7/doc/diff.texi	2004-04-24 02:09:42.175301032 +0200
 @@ -35,18 +35,13 @@
  
  @c Debian install-info (up through at least version 1.9.20) uses only the
@@ -14,7 +14,7 @@
 -* sdiff: (diff)Invoking sdiff.                  Merge 2 files side-by-side.
 -@end direntry
 -
--@dircategory GNU packages
+-@dircategory Text creation and manipulation
 -@direntry
 -* Diff: (diff).                 Comparing and merging files.
 +* cmp: (diff)cmp.			Compare 2 files byte by byte
