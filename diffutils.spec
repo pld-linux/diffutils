@@ -6,15 +6,16 @@ Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
 Version:	2.7
 Release:	22
+License:	GPL
 Group:		Applications/Text
 Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
-License:	GPL
 Source0:	ftp://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
 Patch0:		%{name}-man.patch
 Patch1:		%{name}-info.patch
 Patch2:		%{name}-DESTDIR.patch
+URL:		http://www.gnu.org/software/diffutils/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
