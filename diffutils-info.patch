@@ -8,7 +8,7 @@ diff -Nru diffutils-2.7/diff.texi diffutils-2.7.new/diff.texi
 +@ifinfo
 +@dircategory File utilities:
 +@direntry
-+* diffutils: (diff)			The GNU diff utilities
++* diffutils: (diff).			The GNU diff utilities
 +@end direntry
 +@end ifinfo
 +
