@@ -5,15 +5,16 @@ Summary(pl):	narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
 Version:	2.7
-Release:	18
-Group:		Utilities/Text
+Release:	22
+Group:		Applications/Text
+Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
-Group(pl):	Narzêdzia/Tekst
+Group(pl):	Aplikacje/Tekst
 License:	GPL
-Source0:	ftp://prep.ai.mit.edu/pub/gnu/diffutils/%{name}-%{version}.tar.gz
-Patch0:		diffutils-man.patch
-Patch1:		diffutils-info.patch
-Patch2:		diffutils-DESTDIR.patch
+Source0:	ftp://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
+Patch0:		%{name}-man.patch
+Patch1:		%{name}-info.patch
+Patch2:		%{name}-DESTDIR.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -27,8 +28,6 @@ original; diff3 can produce a merged file that contains both persons
 changes and warnings about conflicts. The sdiff command can be used to
 merge two files interactively.
 
-Install diffutils if you need to compare text files.
-
 %description -l de
 Diffutils enthält 4 Utilities: diff, cmp, diff3 und sdiff. Diff
 vergleicht zwei Dateien und zeigt die Unterschiede, Zeile für Zeile.
@@ -40,9 +39,6 @@ gemeinsamen Ursprung gemacht haben; diff3 kann eine Datei erzeugen,
 die die Änderungen beider Personen und Warnungen zu Konflikten
 enthält. Der sdiff-Befehl kann benutzt werden, um zwei Dateien
 interaktiv zusammenzufügen.
-
-Installieren Sie diffutils, wenn Sie Text- oder Source-Dateien
-vergleichen müssen.
 
 %description -l pl
 Diffutils zawiera nastêpuj±ce programy: diff, cmp, diff3 i sdiff. Diff
@@ -64,7 +60,6 @@ plików.
 
 %build
 autoconf
-LDFLAGS="-s"; export LDFLAGS
 %configure
 
 %{__make} PR_PROGRAM=%{_bindir}/pr
@@ -78,8 +73,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/diff* \
-	$RPM_BUILD_ROOT%{_mandir}/{man1/*,pl/man1/*} NEWS README
+gzip -9nf NEWS README
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
