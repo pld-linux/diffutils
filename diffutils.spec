@@ -18,6 +18,7 @@ URL:		http://www.gnu.org/software/diffutils/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.14.1
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
