@@ -40,7 +40,7 @@ pracuj± tylko na plikach tekstowych.
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target} \
+./configure %{_target_platform} \
 	--prefix=/usr 
 
 make PR_PROGRAM=%{_bindir}/pr
