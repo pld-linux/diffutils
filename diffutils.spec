@@ -1,5 +1,5 @@
-Summary:	GNU diff Utilities
-Summary(de):	GNU-Diff-Utilities 
+Summary:	A GNU collection of diff utilities
+Summary(de):	GNU-Sammlung von diff-Utilities
 Summary(fr):	Utilitaires diff de GNU
 Summary(pl):	narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
@@ -12,6 +12,7 @@ Copyright:	GPL
 Source:		ftp://prep.ai.mit.edu/pub/gnu/diffutils/%{name}-%{version}.tar.gz
 Patch0:		diffutils-man.patch
 Patch1:		diffutils-info.patch
+Patch2:		diffutils-DESTDIR.patch
 Prereq:		/usr/sbin/fix-info-dir
 Buildroot:	/tmp/%{name}-%{version}-root
 
@@ -27,21 +28,41 @@ sdiff command can be used to merge two files interactively.
 
 Install diffutils if you need to compare text files.
 
+%description -l de
+Diffutils enthält 4 Utilities: diff, cmp, diff3 und sdiff. Diff vergleicht
+zwei Dateien und zeigt die Unterschiede, Zeile für Zeile. cmp zeigt Offset
+und Zeilennummern, in denen sich zwei Dateien unterscheiden, cmp kann auch
+die Zeichen zeigen, die sich unterscheiden. diff3 zeigt die Unterschiede
+zwischen 3 Dateien. Diff3 kann benutzt werden, wenn zwei Leute unabhängige
+Änderungen zu einem gemeinsamen Ursprung gemacht haben; diff3 kann eine
+Datei erzeugen, die die Änderungen beider Personen und Warnungen zu
+Konflikten enthält. Der sdiff-Befehl kann benutzt werden, um zwei Dateien
+interaktiv zusammenzufügen.
+
+Installieren Sie diffutils, wenn Sie Text- oder Source-Dateien vergleichen
+müssen.
+
 %description -l pl
-Narzêdzia diff s± u¿ywane do porównywania zawarto¶ci plików i tworzenia 
-zbioru z ró¿nicami. Mo¿na go potem u¿yæ (za pomoc± programu patch) do
-uaktualnienia starszego pliku. Wszystkie narzêdzia (za wyj±tkiem cmp)
-pracuj± tylko na plikach tekstowych.
+Diffutils zawiera nastêpuj±ce programy: diff, cmp, diff3 i sdiff. Diff s³u¿y
+do porównywania dwuch plików wy¶wietlaj±c ró¿nice miêdzy nimi linia po
+linii. Polecenie cmp numer bajtów na których wystepuj± ró¿nice miêdzy
+porównywanymi plikami. Diff3 pokazuje ró¿nice miedzy trzema plikami. Diff3
+moze byæ u¿yty np. w sytuacji kiedy dwie osoby wykona³y zmienê niezale¿nie
+od siebie na jednym pliku pozwalaj±c uzyskaæ po³±czon± listê zmian
+zawierajac± informacje o tym kto co zmieni³, a takze informacje o
+konfliktach miedzy tymi dwoma modyfikacjami. Polecenie sdiff s³u¿y do
+interakcyjnego ³aczenia dwuch plików.
 
 %prep
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure \
-	--prefix=%{_prefix}
+autoconf
+LDFLAGS="-s"; export LDFLAGS
+%configure
 
 make PR_PROGRAM=%{_bindir}/pr
 
@@ -49,19 +70,10 @@ make PR_PROGRAM=%{_bindir}/pr
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
 
-make install \
-	prefix=$RPM_BUILD_ROOT/usr \
-	bindir=$RPM_BUILD_ROOT/%{_bindir} \
-	mandir=$RPM_BUILD_ROOT/%{_mandir} \
-	infodir=$RPM_BUILD_ROOT/%{_infodir}
-
-strip $RPM_BUILD_ROOT%{_bindir}/*
+make install DESTDIR=$RPM_BUILD_ROOT
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
-
-# Conflicts with man-pages
-rm -f $RPM_BUILD_ROOT%{_mandir}/man1/diff.1 
 
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/diff* \
 	$RPM_BUILD_ROOT%{_mandir}/{man1/*,pl/man1/*} NEWS README
