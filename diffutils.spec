@@ -84,21 +84,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/diff.info*gz
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
-
-%changelog
-* Mon Jun 07 1999 Jan Rêkorajski <baggins@pld.org.pl>
-  [2.7-16]
-- spec cleanup
-
-* Thu Apr  1 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [2.7-15]
-- added cmp(1), diff(1), diff3(1), sdiff(1) man pages and pl man page
-  diff(1),
-- standarized {un}registration info pages (added diffutils-info.patch).
-
-* Thu Sep 24 1998 Marcin Korzonek <mkorz@shadow.eu.org>
-  [2.7-12]
-- added pl translation,
-- adde -q %setup parameter,
-- moved CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" from make 
-  to configure (as a much safer solution).
