@@ -1,27 +1,34 @@
---- diffutils-2.8.4/po/pl.po.orig	2002-06-28 09:05:42.000000000 +0200
-+++ diffutils-2.8.4/po/pl.po	2003-04-13 21:16:48.000000000 +0200
-@@ -5,9 +5,9 @@
+--- diffutils-2.8.7/po/pl.po.orig	2004-04-13 09:07:52.000000000 +0200
++++ diffutils-2.8.7/po/pl.po	2004-04-24 02:22:14.860875432 +0200
+@@ -1,14 +1,14 @@
+ # Polish translations for the GNU diffutils messages
+-# Copyright (C) 1996, 2002 Free Software Foundation, Inc.
+-# Rafa³ Maszkowski <rzm@icm.edu.pl>, 1996, 2002.
++# Copyright (C) 1996, 2002, 2004 Free Software Foundation, Inc.
++# Rafa³ Maszkowski <rzm@icm.edu.pl>, 1996, 2002, 2004.
+ # corrections: Pawe³ Krawczyk <kravietz@pipeta.chemia.pk.edu.pl>, 1996
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: GNU diffutils 2.7.10\n"
-+"Project-Id-Version: GNU diffutils 2.8.4\n"
- "POT-Creation-Date: 2002-06-28 00:05-0700\n"
++"Project-Id-Version: GNU diffutils 2.8.7\n"
+ "Report-Msgid-Bugs-To: \n"
+ "POT-Creation-Date: 2004-04-13 00:07-0700\n"
 -"PO-Revision-Date: 2002-03-12 15:00+0100\n"
-+"PO-Revision-Date: 2002-04-13 17:02+0200\n"
++"PO-Revision-Date: 2004-04-21 19:00+0200\n"
  "Last-Translator: Rafa³ Maszkowski <rzm@icm.edu.pl>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"
-@@ -24,7 +24,7 @@
+@@ -25,7 +25,7 @@
  
- #: lib/error.c:128 lib/error.c:156
+ #: lib/error.c:127
  msgid "Unknown system error"
 -msgstr "Niezany b³±d systemu"
 +msgstr "Nieznany b³±d systemu"
  
  #: lib/file-type.c:42
  msgid "regular empty file"
-@@ -52,7 +52,7 @@
+@@ -53,7 +53,7 @@
  
  #: lib/file-type.c:57
  msgid "symbolic link"
@@ -30,120 +37,198 @@
  
  #: lib/file-type.c:60
  msgid "socket"
-@@ -77,7 +77,7 @@
- #: lib/getopt.c:693
+@@ -82,7 +82,7 @@
+ #: lib/getopt.c:570 lib/getopt.c:589
  #, c-format
  msgid "%s: option `%s' is ambiguous\n"
 -msgstr "%s: opcja `%s' is ambiguous\n"
-+msgstr "%s: opcja `%s' jest niejednoznaczna\n"
++msgstr "%s: opcja `%s' nie jest jednoznaczna\n"
  
- #: lib/getopt.c:718
+ #: lib/getopt.c:622 lib/getopt.c:626
  #, c-format
-@@ -102,7 +102,7 @@
- #: lib/getopt.c:774
- #, c-format
- msgid "%s: unrecognized option `%c%s'\n"
--msgstr "%s: unrecognized option `%c%s'\n"
-+msgstr "%s: nierozpoznana opcja `%c%s'\n"
+@@ -148,7 +148,7 @@
  
- #: lib/getopt.c:800
- #, c-format
-@@ -143,7 +143,7 @@
- 
- #: lib/regex.c:1376
+ #: lib/regex.c:1311
  msgid "Invalid collation character"
 -msgstr "Zly znak zbiorczy"
 +msgstr "Z³y znak zbiorczy"
  
- #: lib/regex.c:1379
+ #: lib/regex.c:1314
  msgid "Invalid character class name"
-@@ -183,7 +183,7 @@
+@@ -188,7 +188,7 @@
  
- #: lib/regex.c:1406
+ #: lib/regex.c:1341
  msgid "Invalid preceding regular expression"
 -msgstr "Z³e poprzedzj±ce wyra¿enie regularne"
 +msgstr "Z³e poprzedzaj±ce wyra¿enie regularne"
  
- #: lib/regex.c:1409
+ #: lib/regex.c:1344
  msgid "Premature end of regular expression"
-@@ -199,7 +199,7 @@
+@@ -204,7 +204,7 @@
  
- #: lib/regex.c:8034
+ #: lib/regex.c:7915
  msgid "No previous regular expression"
 -msgstr "Brak porzedniego wyra¿enia regularnego"
 +msgstr "Brak poprzedniego wyra¿enia regularnego"
  
- #: lib/xmalloc.c:63
+ #: lib/xmalloc.c:53
  msgid "memory exhausted"
-@@ -211,10 +211,9 @@
- #. copyright symbol is not available, please leave it as "(C)".
- #: lib/version-etc.c:50
- msgid "(C)"
--msgstr ""
-+msgstr "(C)"
+@@ -212,21 +212,21 @@
  
- #: lib/version-etc.c:63
--#, fuzzy
- msgid ""
- "This program comes with NO WARRANTY, to the extent permitted by law.\n"
- "You may redistribute copies of this program\n"
-@@ -223,7 +222,7 @@
+ #. TRANSLATORS: %s denotes an author name.
+ #: lib/version-etc.c:78
+-#, fuzzy, c-format
++#, c-format
+ msgid "Written by %s.\n"
+-msgstr "Napisany przez Thomasa Lorda."
++msgstr "Autor: %s.\n"
+ 
+ #. TRANSLATORS: Each %s denotes an author name.
+ #: lib/version-etc.c:82
+-#, fuzzy, c-format
++#, c-format
+ msgid "Written by %s and %s.\n"
+-msgstr "Napisany przez Randiego Smitha."
++msgstr "Autorzy: %s i %s.\n"
+ 
+ #. TRANSLATORS: Each %s denotes an author name.
+ #: lib/version-etc.c:86
+-#, fuzzy, c-format
++#, c-format
+ msgid "Written by %s, %s, and %s.\n"
+-msgstr "Napisany przez Randiego Smitha."
++msgstr "Autorzy: %s, %s i %s.\n"
+ 
+ #. TRANSLATORS: Each %s denotes an author name.
+ #. You can use line breaks, estimating that each author name occupies
+@@ -237,6 +237,8 @@
+ "Written by %s, %s, %s,\n"
+ "and %s.\n"
  msgstr ""
- "Autorzy nie daj± ¯ADNYCH gwarancji, do granic, na które zezwala prawo.\n"
- "Program mo¿e byæ rozpowszechniany na warunkach Ogólnej Licencji Publicznej\n"
--"GNU; szczególy s± opisane w pliku COPYING."
-+"GNU; szczegó³y s± opisane w pliku COPYING."
++"Autorzy: %s, %s, %s\n"
++"i %s.\n"
  
- #: src/analyze.c:808 src/diff.c:1259
+ #. TRANSLATORS: Each %s denotes an author name.
+ #. You can use line breaks, estimating that each author name occupies
+@@ -247,6 +249,8 @@
+ "Written by %s, %s, %s,\n"
+ "%s, and %s.\n"
+ msgstr ""
++"Autorzy: %s, %s, %s,\n"
++"%s i %s.\n"
+ 
+ #. TRANSLATORS: Each %s denotes an author name.
+ #. You can use line breaks, estimating that each author name occupies
+@@ -257,6 +261,8 @@
+ "Written by %s, %s, %s,\n"
+ "%s, %s, and %s.\n"
+ msgstr ""
++"Autorzy: %s, %s, %s,\n"
++"%s, %s i %s.\n"
+ 
+ #. TRANSLATORS: Each %s denotes an author name.
+ #. You can use line breaks, estimating that each author name occupies
+@@ -267,6 +273,8 @@
+ "Written by %s, %s, %s,\n"
+ "%s, %s, %s, and %s.\n"
+ msgstr ""
++"Autorzy: %s, %s, %s,\n"
++"%s, %s, %s i %s.\n"
+ 
+ #. TRANSLATORS: Each %s denotes an author name.
+ #. You can use line breaks, estimating that each author name occupies
+@@ -278,6 +286,9 @@
+ "%s, %s, %s, %s,\n"
+ "and %s.\n"
+ msgstr ""
++"Autorzy: %s, %s, %s,\n"
++"%s, %s, %s, %s\n"
++"i %s.\n"
+ 
+ #. TRANSLATORS: Each %s denotes an author name.
+ #. You can use line breaks, estimating that each author name occupies
+@@ -289,6 +300,9 @@
+ "%s, %s, %s, %s,\n"
+ "%s, and %s.\n"
+ msgstr ""
++"Autorzy: %s, %s, %s,\n"
++"%s, %s, %s, %s,\n"
++"%s i %s.\n"
+ 
+ #. TRANSLATORS: Each %s denotes an author name.
+ #. You can use line breaks, estimating that each author name occupies
+@@ -300,12 +314,18 @@
+ "%s, %s, %s, %s,\n"
+ "%s, %s, and others.\n"
+ msgstr ""
++"Autorzy: %s, %s, %s,\n"
++"%s, %s, %s, %s,\n"
++"%s, %s i inni.\n"
+ 
+ #: lib/version-etc.c:147
+ msgid ""
+ "This is free software; see the source for copying conditions.  There is NO\n"
+ "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
+ msgstr ""
++"Ten program jest darmowy; warunki kopiowania s± opisane w ¼ród³ach.\n"
++"Autorzy nie daj± ¯ADNYCH gwarancji, w tym równie¿ gwarancji PRZYDATNO¦CI\n"
++"DO SPRZEDA¯Y LUB DO KONKRETNYCH CELÓW.\n"
+ 
+ #: src/analyze.c:782 src/diff.c:1273
  #, c-format
-@@ -239,7 +238,7 @@
- #. if possible.
- #: src/cmp.c:47
- msgid "Written by Torbjorn Granlund and David MacKenzie."
--msgstr "Napisany przez Torbjorna Gralunda i Davida MacKenzie."
-+msgstr "Napisany przez Torbjörna Gralunda i Davida MacKenzie."
+@@ -347,11 +367,11 @@
  
- #: src/cmp.c:118 src/diff.c:834 src/diff3.c:403 src/sdiff.c:167
- #, c-format
-@@ -272,11 +271,11 @@
- 
- #: src/cmp.c:161
+ #: src/cmp.c:160
  msgid "-i SKIP  --ignore-initial=SKIP  Skip the first SKIP bytes of input."
 -msgstr "-i OMIÑ  --ignore-initial=OMIÑ  PRzeskoczenie pierwszych OMIÑ bajtów."
 +msgstr "-i OMIÑ  --ignore-initial=OMIÑ  Przeskoczenie pierwszych OMIÑ bajtów."
  
- #: src/cmp.c:162
+ #: src/cmp.c:161
  msgid "-i SKIP1:SKIP2  --ignore-initial=SKIP1:SKIP2"
 -msgstr "-i SKOK1:SKOK2--ignore-initial=SKOK1:SKOK2"
 +msgstr "-i SKOK1:SKOK2  --ignore-initial=SKOK1:SKOK2"
  
- #: src/cmp.c:163
+ #: src/cmp.c:162
  msgid ""
-@@ -303,12 +302,12 @@
+@@ -378,12 +398,12 @@
  
- #: src/cmp.c:168 src/diff.c:923 src/diff3.c:432 src/sdiff.c:205
+ #: src/cmp.c:167 src/diff.c:929 src/diff3.c:442 src/sdiff.c:206
  msgid "--help  Output this help."
 -msgstr "--help  Wypisanie tego helpu."
 +msgstr "--help  Wypisanie tego opisu."
  
- #: src/cmp.c:177
+ #: src/cmp.c:176
  #, c-format
  msgid "Usage: %s [OPTION]... FILE1 [FILE2 [SKIP1 [SKIP2]]]\n"
 -msgstr "U¿ycie: %s [OPCJA]... PLIK1 [PLIK2 [SKOK1 [SKOK2]]]\n"
 +msgstr "Sk³adnia: %s [OPCJA]... PLIK1 [PLIK2 [SKOK1 [SKOK2]]]\n"
  
- #: src/cmp.c:179
+ #: src/cmp.c:178
  msgid "Compare two files byte by byte."
-@@ -334,7 +333,7 @@
+@@ -410,10 +430,12 @@
+ #: src/cmp.c:187 src/diff.c:934 src/sdiff.c:224
+ msgid "Exit status is 0 if inputs are the same, 1 if different, 2 if trouble."
+ msgstr ""
++"Status wyj¶ciowy ma warto¶æ 0 gdy pliki wej¶ciowe s± takie same, 1 - je¿eli\n"
++"ró¿ne, 2 - je¿eli s± problemy."
  
- #: src/cmp.c:188 src/diff.c:929 src/diff3.c:451 src/sdiff.c:223
+ #: src/cmp.c:188 src/diff.c:936 src/diff3.c:462 src/sdiff.c:225
  msgid "Report bugs to <bug-gnu-utils@gnu.org>."
 -msgstr "Inofmracje o b³êdach: bug-gnu-utils@gnu.org ."
 +msgstr "Informacje o b³êdach: bug-gnu-utils@gnu.org ."
  
- #: src/cmp.c:231
+ #: src/cmp.c:232
  #, c-format
-@@ -402,14 +401,13 @@
+@@ -422,7 +444,7 @@
+ 
+ #: src/cmp.c:247
+ msgid "Torbjorn Granlund"
+-msgstr ""
++msgstr "Torbjörn Granlund"
+ 
+ #: src/cmp.c:261 src/diff.c:757 src/diff3.c:315 src/sdiff.c:564
+ #, c-format
+@@ -477,14 +499,13 @@
  msgstr "b³êdna d³ugo¶æ horyzontu `%s'"
  
  #: src/diff.c:573
@@ -151,17 +236,17 @@
 +#, c-format
  msgid "invalid tabsize `%s'"
 -msgstr "b³êdna szeroko¶æ `%s'"
-+msgstr "b³êdna szeroko¶æ tabulacji `%s'"
++msgstr "b³êdny rozmiar TAB-a `%s'"
  
  #: src/diff.c:577
 -#, fuzzy
  msgid "conflicting tabsize options"
 -msgstr "sprzeczne opcje szeroko¶ci"
-+msgstr "sprzeczne opcje szeroko¶ci tabulacji"
++msgstr "sprzeczne opcje rozmiarów TAB-a"
  
- #: src/diff.c:641
+ #: src/diff.c:647
  #, c-format
-@@ -496,7 +494,7 @@
+@@ -571,7 +592,7 @@
  "-c  -C ILE  --context[=ILE]  Skopiowanie ILE (domy¶lnie 2) linii kontekstu.\n"
  "-u  -U ILE  --unified[=ILE]  ILE (domy¶lnie 2) linii zunifikowanego "
  "kontekstu.\n"
@@ -170,21 +255,7 @@
  "  -p  --show-c-function      Wskazanie funkcji C, w których s± zmiany.\n"
  "  -F RE  --show-function-line=RE  Pokazanie ostatniej linii pasuj±cej do RE."
  
-@@ -510,11 +508,11 @@
- 
- #: src/diff.c:872
- msgid "--normal  Output a normal diff."
--msgstr "--normal  Wynik w postaci zwyk³ego diff-a."
-+msgstr "--normal  Wynik w postaci zwyk³ego diffa."
- 
- #: src/diff.c:873
- msgid "-n  --rcs  Output an RCS format diff."
--msgstr "-n  --rcs  Wynik w postaci diff-a z RCS."
-+msgstr "-n  --rcs  Wynik w postaci diffa z RCS."
- 
- #: src/diff.c:874
- msgid ""
-@@ -524,7 +522,7 @@
+@@ -599,7 +620,7 @@
  "  --suppress-common-lines  Do not output common lines."
  msgstr ""
  "-y  --side-by-side  Wynik w dwóch kolumnach.\n"
@@ -193,25 +264,25 @@
  "linii.\n"
  "  --left-column  Wypisanie tylko lewej kolumny dla wspólnych linii.\n"
  "  --suppress-common-lines  Bez wypisywania wspólnych linii."
-@@ -532,7 +530,7 @@
- #: src/diff.c:878
+@@ -607,7 +628,7 @@
+ #: src/diff.c:884
  msgid "-D NAME  --ifdef=NAME  Output merged file to show `#ifdef NAME' diffs."
  msgstr ""
 -"-D NAZWA  --ifdef=NAZWA  Wypisanie po³±czonego pliu dla pokazania ró¿nic\n"
 +"-D NAZWA  --ifdef=NAZWA  Wypisanie po³±czonego pliku dla pokazania ró¿nic\n"
  "                         w `#ifdef NAZWA'."
  
- #: src/diff.c:879
-@@ -541,7 +539,7 @@
+ #: src/diff.c:885
+@@ -616,7 +637,7 @@
  msgstr ""
  "--TYPG-group-format=GFMT   Podobnie, ale z u¿yciem GFMT do sformatowania "
  "grup\n"
 -"                           wej¶ciowych type TYPG"
 +"                           wej¶ciowych typu TYPG"
  
- #: src/diff.c:880
+ #: src/diff.c:886
  msgid "--line-format=LFMT  Similar, but format all input lines with LFMT."
-@@ -596,7 +594,7 @@
+@@ -671,7 +692,7 @@
  msgstr ""
  "  LFMT mo¿e zawieraæ:\n"
  "    %L  zawarto¶æ linii\n"
@@ -219,8 +290,8 @@
 +"    %l  zawarto¶æ linii, z wy³±czeniem znaku nowej linii\n"
  "    %[-][SZER][.[DOK£]]{doxX}n  specyfikacjê numeru linii w stylu printf"
  
- #: src/diff.c:898
-@@ -608,7 +606,7 @@
+ #: src/diff.c:904
+@@ -683,7 +704,7 @@
  msgstr ""
  "  GFMT i LFMT mog± zawieraæ:\n"
  "    %%  %\n"
@@ -228,103 +299,98 @@
 +"    %c'C'  pojedynczy znak C\n"
  "    %c'\\OOO'  znak o kodzie ósemkowym OOO"
  
- #: src/diff.c:903
-@@ -625,7 +623,7 @@
+ #: src/diff.c:909
+@@ -700,7 +721,7 @@
  
- #: src/diff.c:906 src/sdiff.c:198
+ #: src/diff.c:912 src/sdiff.c:199
  msgid "--tabsize=NUM  Tab stops are every NUM (default 8) print columns."
 -msgstr ""
-+msgstr "--tabsize=ILE  Pozycja tabulacji co ka¿de ILE (domy¶lnie 8) kolumn."
- 
- #: src/diff.c:908
- msgid "-r  --recursive  Recursively compare any subdirectories found."
-@@ -648,20 +646,19 @@
- 
- #: src/diff.c:912
- msgid "-x PAT  --exclude=PAT  Exclude files that match PAT."
--msgstr "-x WZÓR  --exclude=WZÓR  Wykluczenie plików pasuj±cych do WZORu."
-+msgstr "-x WZÓR  --exclude=WZÓR  Wykluczenie plików pasuj±cych do WZORU."
- 
- #: src/diff.c:913
- msgid ""
- "-X FILE  --exclude-from=FILE  Exclude files that match any pattern in FILE."
- msgstr ""
--"-X PLIK  --exclude-from=PLIK  Pominiêcie plików pasuj±cych do wzorców w "
--"PLIKu."
-+"-X PLIK  --exclude-from=PLIK  Pominiêcie plików pasuj±cych do wzorców w PLIKU."
++msgstr "--tabsize=ILE  TAB-y co ILE (domy¶lnie 8) kolumn."
  
  #: src/diff.c:914
- msgid ""
- "-S FILE  --starting-file=FILE  Start with FILE when comparing directories."
- msgstr ""
--"-S PLIK  --starting-file=PLIK  Zacznij od PLIKu przy porównywaniu katalogów."
-+"-S PLIK  --starting-file=PLIK  Zacznij od PLIKU przy porównywaniu katalogów."
- 
- #: src/diff.c:915
- msgid ""
-@@ -713,7 +710,7 @@
- #: src/diff.c:938
+ msgid "-r  --recursive  Recursively compare any subdirectories found."
+@@ -788,7 +809,7 @@
+ #: src/diff.c:945
  #, c-format
  msgid "Usage: %s [OPTION]... FILES\n"
 -msgstr "U¿ycie: %s [OPCJA]... PLIKI\n"
 +msgstr "Sk³adnia: %s [OPCJA]... PLIKI\n"
  
- #: src/diff.c:967
+ #: src/diff.c:974
  #, c-format
-@@ -816,7 +813,7 @@
- #: src/diff3.c:441
+@@ -887,7 +908,7 @@
+ #: src/diff3.c:451
  #, c-format
  msgid "Usage: %s [OPTION]... MYFILE OLDFILE YOURFILE\n"
 -msgstr "U¿ycie: %s [OPCJA]... MÓJ_PLIK STARY_PLIK TWÓJ_PLIK\n"
 +msgstr "Sk³adnia: %s [OPCJA]... MÓJ_PLIK STARY_PLIK TWÓJ_PLIK\n"
  
- #: src/diff3.c:443
+ #: src/diff3.c:453
  msgid "Compare three files line by line."
-@@ -859,11 +856,11 @@
+@@ -896,6 +917,8 @@
+ #: src/diff3.c:461
+ msgid "Exit status is 0 if successful, 1 if conflicts, 2 if trouble."
+ msgstr ""
++"Status wyj¶ciowy ma warto¶æ 0 gdy polecenie wykona³o siê z prawid³owym\n"
++"wynikiem, 1 - je¿eli s± konflikty, 2 - je¿eli s± problemy."
  
- #: src/diff3.c:1343
- msgid "internal error: invalid diff type passed to output"
--msgstr "b³±d wenwêtrzny: b³êdny typ diff-a przekazany na wyj¶cie"
-+msgstr "b³±d wewnêtrzny: b³êdny typ diffa przekazany na wyj¶cie"
+ #: src/diff3.c:655
+ msgid "internal error: screwup in format of diff blocks"
+@@ -919,9 +942,9 @@
+ msgstr "b³êdny format diff; niekompletna ostatnia linia"
  
- #: src/diff3.c:1614 src/diff3.c:1671
+ #: src/diff3.c:1276 src/sdiff.c:279 src/util.c:303
+-#, fuzzy, c-format
++#, c-format
+ msgid "subsidiary program `%s' could not be invoked"
+-msgstr "nie znaleziono programu pomocniczego `%s'"
++msgstr "nie móg³ byæ wywo³any program pomocniczy `%s'"
+ 
+ #: src/diff3.c:1278 src/sdiff.c:281 src/util.c:305
+ #, c-format
+@@ -934,9 +957,9 @@
+ msgstr "nie zadzia³a³ program pomocniczy `%s'"
+ 
+ #: src/diff3.c:1281 src/sdiff.c:284 src/util.c:308
+-#, fuzzy, c-format
++#, c-format
+ msgid "subsidiary program `%s' failed (exit status %d)"
+-msgstr "nie zadzia³a³ program pomocniczy `%s'"
++msgstr "program pomocniczy `%s' zakoñczy³ siê z b³êdem (status wyj¶ciowy %d)"
+ 
+ #: src/diff3.c:1301
+ msgid "invalid diff format; incorrect leading line chars"
+@@ -948,7 +971,7 @@
+ 
+ #: src/diff3.c:1647 src/diff3.c:1704
  msgid "input file shrank"
 -msgstr "plik wej¶ciowy siê zmiejszy³"
 +msgstr "plik wej¶ciowy siê zmniejszy³"
  
- #: src/dir.c:162
+ #: src/dir.c:160
  #, c-format
-@@ -876,7 +873,7 @@
- 
- #: src/sdiff.c:182
- msgid "-o FILE  --output=FILE  Operate interactively, sending output to FILE."
--msgstr "-o PLIK  --output=PLIK  Tryb interakcyjny, wyniki wysy³ane do PLIKu."
-+msgstr "-o PLIK  --output=PLIK  Tryb interakcyjny, wyniki wysy³ane do PLIKU."
- 
- #: src/sdiff.c:184
- msgid "-i  --ignore-case  Consider upper- and lower-case to be the same."
-@@ -887,10 +884,8 @@
+@@ -968,10 +991,8 @@
  msgstr "-W  --ignore-all-space  Ignorowanie wszystkich znaków odstêpu."
  
- #: src/sdiff.c:193
+ #: src/sdiff.c:194
 -#, fuzzy
  msgid "-w NUM  --width=NUM  Output at most NUM (default 130) print columns."
 -msgstr ""
 -"-w ILE  --width=ILE  Wypisanie najwy¿ej ILE (domy¶nie 130) znaków w linii."
-+msgstr "-w ILE  --width=ILE  Wypisanie najwy¿ej ILE (domy¶lnie 130) znaków w linii."
++msgstr "-w ILE  --width=ILE  Wypisanie najwy¿ej ILE (domy¶lnie 130) kolumn."
  
- #: src/sdiff.c:194
+ #: src/sdiff.c:195
  msgid "-l  --left-column  Output only the left column of common lines."
-@@ -908,7 +903,7 @@
- #: src/sdiff.c:214
+@@ -989,7 +1010,7 @@
+ #: src/sdiff.c:215
  #, c-format
  msgid "Usage: %s [OPTION]... FILE1 FILE2\n"
 -msgstr "U¿ycie: %s [OPCJA]... PLIK1 PLIK2\n"
 +msgstr "Sk³adnia: %s [OPCJA]... PLIK1 PLIK2\n"
  
- #: src/sdiff.c:215
+ #: src/sdiff.c:216
  msgid "Side-by-side merge of file differences."
-@@ -942,7 +937,7 @@
+@@ -1023,33 +1044,6 @@
  "e:\tEdycja nowej wersji.\n"
  "l:\tU¿ycie wersji po lewej.\n"
  "r:\tU¿ycie wersji po prawej.\n"
@@ -332,14 +398,30 @@
 +"s:\tDo³±czenie wspólnych linii bez informowania o tym.\n"
  "v:\tDo³±czenie wspólnych linii z podaniem informacji.\n"
  "q:\tZakoñczenie.\n"
- 
-@@ -950,9 +945,3 @@
- #, c-format
- msgid "subsidiary program `%s' not executable"
- msgstr "program pomocniczy `%s' nie jest wykonywalny"
+-
+-#~ msgid ""
+-#~ "This program comes with NO WARRANTY, to the extent permitted by law.\n"
+-#~ "You may redistribute copies of this program\n"
+-#~ "under the terms of the GNU General Public License.\n"
+-#~ "For more information about these matters, see the file named COPYING."
+-#~ msgstr ""
+-#~ "Autorzy nie daj± ¯ADNYCH gwarancji, do granic, na które zezwala prawo.\n"
+-#~ "Program mo¿e byæ rozpowszechniany na warunkach Ogólnej Licencji "
+-#~ "Publicznej\n"
+-#~ "GNU; szczególy s± opisane w pliku COPYING."
 -
 -#~ msgid "Binary files %s and %s differ\n"
 -#~ msgstr "Pliki binarne %s i %s siê ró¿ni±\n"
 -
--#~ msgid "typed memory object"
--#~ msgstr "obiekt w pamiêci z okre¶leniem typu"
+-#~ msgid "Written by Torbjorn Granlund and David MacKenzie."
+-#~ msgstr "Napisany przez Torbjorna Gralunda i Davida MacKenzie."
+-
+-#~ msgid ""
+-#~ "Written by Paul Eggert, Mike Haertel, David Hayes,\n"
+-#~ "Richard Stallman, and Len Tower."
+-#~ msgstr ""
+-#~ "Napisany przez Paula Eggerta, Mike'a Haertela, Davida Hayesa,\n"
+-#~ "Richarda Stallmana i Lena Towera."
+-
+-#~ msgid "subsidiary program `%s' not executable"
+-#~ msgstr "program pomocniczy `%s' nie jest wykonywalny"
