@@ -60,7 +60,7 @@ plików.
 %patch2 -p1
 
 %build
-autoconf
+%{__autoconf}
 %configure
 
 %{__make} PR_PROGRAM=%{_bindir}/pr
