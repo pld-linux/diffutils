@@ -14,7 +14,7 @@ Patch0:		diffutils-man.patch
 Patch1:		diffutils-info.patch
 Patch2:		diffutils-DESTDIR.patch
 Prereq:		/usr/sbin/fix-info-dir
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Diffutils includes four utilities:  diff, cmp, diff3 and sdiff. Diff
