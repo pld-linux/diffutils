@@ -47,23 +47,23 @@ make PR_PROGRAM=/usr/bin/pr
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/man/{man1,pl/man1}
+install -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
 
 make prefix=$RPM_BUILD_ROOT/usr install
 strip $RPM_BUILD_ROOT/usr/bin/*
 
-install man/*.1 $RPM_BUILD_ROOT/usr/man/man1
-install man/pl/*.1 $RPM_BUILD_ROOT/usr/man/pl/man1
+install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/info/diff* \
-	$RPM_BUILD_ROOT/usr/man/{man1/*,pl/man1/*}
+gzip -9nf $RPM_BUILD_ROOT%{_infodir}/diff* \
+	$RPM_BUILD_ROOT%{_mandir}/{man1/*,pl/man1/*}
 
 %post
-/sbin/install-info /usr/info/diff.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/diff.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/info/diff.info.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/diff.info.gz /etc/info-dir
 fi
 
 %clean
@@ -73,9 +73,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) /usr/bin/*
-/usr/info/diff.info*gz
-/usr/man/man1/*
-%lang(pl) /usr/man/pl/man1/*
+%{_infodir}/diff.info*gz
+%{_mandir}/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
 
 %changelog
 * Thu Apr  1 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
