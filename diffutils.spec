@@ -9,7 +9,7 @@ Release:	17
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
 Copyright:	GPL
-Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Source:		ftp://prep.ai.mit.edu/pub/gnu/diffutils/%{name}-%{version}.tar.gz
 Patch0:		diffutils-man.patch
 Patch1:		diffutils-info.patch
 Buildroot:	/tmp/%{name}-%{version}-root
@@ -48,7 +48,8 @@ make PR_PROGRAM=%{_bindir}/pr
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
 
-make install prefix=$RPM_BUILD_ROOT/usr \
+make install \
+	prefix=$RPM_BUILD_ROOT/usr \
 	bindir=$RPM_BUILD_ROOT/%{_bindir} \
 	mandir=$RPM_BUILD_ROOT/%{_mandir} \
 	infodir=$RPM_BUILD_ROOT/%{_infodir}
