@@ -12,6 +12,7 @@ Copyright:	GPL
 Source:		ftp://prep.ai.mit.edu/pub/gnu/diffutils/%{name}-%{version}.tar.gz
 Patch0:		diffutils-man.patch
 Patch1:		diffutils-info.patch
+Prereq:		/usr/sbin/fix-info-dir
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -66,12 +67,10 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/diff* \
 	$RPM_BUILD_ROOT%{_mandir}/{man1/*,pl/man1/*} NEWS README
 
 %post
-/sbin/install-info %{_infodir}/diff.info.gz /etc/info-dir
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %preun
-if [ "$1" = "0" ]; then
-	/sbin/install-info --delete %{_infodir}/diff.info.gz /etc/info-dir
-fi
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
