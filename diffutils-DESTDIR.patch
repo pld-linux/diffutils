@@ -1,0 +1,34 @@
+diff -Nru diffutils-2.7/Makefile.in diffutils-2.7.new/Makefile.in
+--- diffutils-2.7/Makefile.in	Thu Sep 22 18:47:00 1994
++++ diffutils-2.7.new/Makefile.in	Sat Sep 25 13:41:37 1999
+@@ -44,9 +44,9 @@
+ exec_prefix = @exec_prefix@
+ edit_program_name = sed '@program_transform_name@'
+ 
+-bindir = $(exec_prefix)/bin
++bindir = @bindir@
+ 
+-infodir = $(prefix)/info
++infodir = @infodir@
+ 
+ DEFAULT_EDITOR_PROGRAM = ed
+ DIFF_PROGRAM = $(bindir)/`echo diff | $(edit_program_name)`
+@@ -141,15 +141,15 @@
+ 
+ install: all installdirs
+ 	for p in $(PROGRAMS); do \
+-	  $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p | $(edit_program_name)`; \
++	  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p | $(edit_program_name)`; \
+ 	done
+ 	{ test -f diff.info || cd $(srcdir); } && \
+ 	for f in diff.info*; do \
+-	  $(INSTALL_DATA) $$f $(infodir)/$$f; \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(infodir)/$$f; \
+ 	done
+ 
+ installdirs:
+-	$(SHELL) ${srcdir}/mkinstalldirs $(bindir) $(infodir)
++	$(SHELL) ${srcdir}/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(infodir)
+ 
+ # We need more tests.
+ check:
