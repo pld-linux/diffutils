@@ -5,7 +5,7 @@ Summary(pl):	narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
 Version:	2.7
-Release:	15
+Release:	16
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
 Copyright:	GPL
@@ -40,8 +40,8 @@ pracuj± tylko na plikach tekstowych.
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure %{_target_platform} \
-	--prefix=/usr 
+./configure \
+	--prefix=%{_prefix}
 
 make PR_PROGRAM=%{_bindir}/pr
 
@@ -49,7 +49,11 @@ make PR_PROGRAM=%{_bindir}/pr
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
 
-make prefix=$RPM_BUILD_ROOT/usr install
+make install prefix=$RPM_BUILD_ROOT/usr \
+	bindir=$RPM_BUILD_ROOT/%{_bindir} \
+	mandir=$RPM_BUILD_ROOT/%{_mandir} \
+	infodir=$RPM_BUILD_ROOT/%{_infodir}
+
 strip $RPM_BUILD_ROOT%{_bindir}/*
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
@@ -78,6 +82,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(pl) %{_mandir}/pl/man1/*
 
 %changelog
+* Mon Jun 07 1999 Jan Rêkorajski <baggins@pld.org.pl>
+  [2.7-16]
+- spec cleanup
+
 * Thu Apr  1 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [2.7-15]
 - added cmp(1), diff(1), diff3(1), sdiff(1) man pages and pl man page
