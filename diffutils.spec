@@ -5,17 +5,18 @@ Summary(pl):	Narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
 Version:	2.7.2
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Text
 Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
 Source0:	ftp://alpha.gnu.org/gnu/%{name}-%{version}.tar.gz
-Patch0:		%{name}-man.patch
-Patch1:		%{name}-info.patch
-Patch2:		%{name}-DESTDIR.patch
-Patch3:		%{name}-immunix-owl-tmp.patch
+Source1:	%{name}-man-pages.tar.gz
+Source2:	%{name}-non-english-man-pages.tar.gz
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-DESTDIR.patch
+Patch2:		%{name}-immunix-owl-tmp.patch
 URL:		http://www.gnu.org/software/diffutils/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,7 +60,6 @@ plików.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 %build
 autoconf
@@ -69,12 +69,14 @@ autoconf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/{man1,pl/man1}
+install -d $RPM_BUILD_ROOT%{_mandir}/
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
-install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
+# install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+# install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
+tar xzvf %{SOURCE1} -C $RPM_BUILD_ROOT%{_mandir}/
+tar xzvf %{SOURCE2} -C $RPM_BUILD_ROOT%{_mandir}/
 
 gzip -9nf NEWS README
 
@@ -94,4 +96,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/diff.info*
 %{_mandir}/man1/*
+%lang(de) %{_mandir}/de/man1/*
+%lang(es) %{_mandir}/es/man1/*
+%lang(fr) %{_mandir}/fr/man1/*
+%lang(hu) %{_mandir}/hu/man1/*
+%lang(it) %{_mandir}/it/man1/*
+%lang(ko) %{_mandir}/ko/man1/*
+%lang(nl) %{_mandir}/nl/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
+%lang(pt) %{_mandir}/pt/man1/*
+%lang(ru) %{_mandir}/ru/man1/*
