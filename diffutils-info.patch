@@ -1,0 +1,17 @@
+diff -Nru diffutils-2.7/diff.texi diffutils-2.7.new/diff.texi
+--- diffutils-2.7/diff.texi	Fri Sep 30 21:54:40 1994
++++ diffutils-2.7.new/diff.texi	Fri Apr  2 15:59:41 1999
+@@ -34,6 +34,13 @@
+ by the Foundation.
+ @end ifinfo
+ 
++@ifinfo
++@dircategory File utilities:
++@direntry
++* diffutils: (diff)			The GNU diff utilities
++@end direntry
++@end ifinfo
++
+ @titlepage
+ @title Comparing and Merging Files
+ @subtitle @code{diff}, @code{diff3}, @code{sdiff}, @code{cmp}, and @code{patch}
