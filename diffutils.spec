@@ -4,20 +4,20 @@ Summary(fr):	Utilitaires diff de GNU
 Summary(pl):	Narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
-Version:	2.8.4
-Release:	3
+Version:	2.8.7
+Release:	1
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://alpha.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
-# Source0-md5: a9c028579abc79ecd6842d60a13abf1d
+# Source0-md5:	18d6587cb915e7aa110a5d463d6ed156
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
-# Source1-md5: 34a7ab56f975ff7e439ea13923ec8ae4
+# Source1-md5:	34a7ab56f975ff7e439ea13923ec8ae4
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/diffutils/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-devel >= 0.14.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -71,7 +71,6 @@ plików.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
