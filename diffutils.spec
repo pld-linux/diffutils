@@ -1,7 +1,7 @@
 Summary:	A GNU collection of diff utilities
 Summary(de):	GNU-Sammlung von diff-Utilities
 Summary(fr):	Utilitaires diff de GNU
-Summary(pl):	narzêdzia diff GNU
+Summary(pl):	Narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
 Version:	2.7.2
@@ -48,8 +48,8 @@ s³u¿y do porównywania dwuch plików wy¶wietlaj±c ró¿nice miêdzy nimi
 linia po linii. Polecenie cmp numer bajtów na których wystepuj±
 ró¿nice miêdzy porównywanymi plikami. Diff3 pokazuje ró¿nice miedzy
 trzema plikami. Diff3 moze byæ u¿yty np. w sytuacji kiedy dwie osoby
-wykona³y zmienê niezale¿nie od siebie na jednym pliku pozwalaj±c
-uzyskaæ po³±czon± listê zmian zawierajac± informacje o tym kto co
+wykona³y zmianê niezale¿nie od siebie na jednym pliku, pozwalaj±c
+uzyskaæ po³±czon± listê zmian zawierajac± informacje o tym, kto co
 zmieni³, a takze informacje o konfliktach miedzy tymi dwoma
 modyfikacjami. Polecenie sdiff s³u¿y do interakcyjnego ³aczenia dwóch
 plików.
