@@ -45,11 +45,11 @@ enthält. Der sdiff-Befehl kann benutzt werden, um zwei Dateien
 interaktiv zusammenzufügen.
 
 %description -l pl
-Diffutils zawiera nastêpuj±ce programy: diff, cmp, diff3 i sdiff. Diff
-s³u¿y do porównywania dwuch plików wy¶wietlaj±c ró¿nice miêdzy nimi
+Diffutils zawiera nastêpuj±ce programy: diff, cmp, diff3 i sdiff. diff
+s³u¿y do porównywania dwóch plików wy¶wietlaj±c ró¿nice miêdzy nimi
 linia po linii. Polecenie cmp numer bajtów na których wystepuj±
-ró¿nice miêdzy porównywanymi plikami. Diff3 pokazuje ró¿nice miedzy
-trzema plikami. Diff3 moze byæ u¿yty np. w sytuacji kiedy dwie osoby
+ró¿nice miêdzy porównywanymi plikami. diff3 pokazuje ró¿nice miedzy
+trzema plikami. diff3 moze byæ u¿yty np. w sytuacji kiedy dwie osoby
 wykona³y zmianê niezale¿nie od siebie na jednym pliku, pozwalaj±c
 uzyskaæ po³±czon± listê zmian zawierajac± informacje o tym, kto co
 zmieni³, a takze informacje o konfliktach miedzy tymi dwoma
