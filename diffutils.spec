@@ -8,7 +8,8 @@ Version:	2.8.7
 Release:	1
 License:	GPL
 Group:		Applications/Text
-Source0:	ftp://alpha.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
+#Source0:	ftp://alpha.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
+Source0:	ftp://alpha.gnu.org/gnu/patch/%{name}-%{version}.tar.gz
 # Source0-md5:	18d6587cb915e7aa110a5d463d6ed156
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	34a7ab56f975ff7e439ea13923ec8ae4
