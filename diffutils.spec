@@ -5,14 +5,13 @@ Summary(pl):	narzêdzia diff GNU
 Summary(tr):	GNU dosya karþýlaþtýrma araçlarý
 Name:		diffutils
 Version:	2.7
-Release:	16
+Release:	17
 Group:		Utilities/Text
 Group(pl):	Narzêdzia/Tekst
 Copyright:	GPL
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Patch0:		diffutils-man.patch
 Patch1:		diffutils-info.patch
-Prereq:		/sbin/install-info
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -59,8 +58,11 @@ strip $RPM_BUILD_ROOT%{_bindir}/*
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 install man/pl/*.1 $RPM_BUILD_ROOT%{_mandir}/pl/man1
 
+# Conflicts with man-pages
+rm -f $RPM_BUILD_ROOT%{_mandir}/man1/diff.1 
+
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/diff* \
-	$RPM_BUILD_ROOT%{_mandir}/{man1/*,pl/man1/*}
+	$RPM_BUILD_ROOT%{_mandir}/{man1/*,pl/man1/*} NEWS README
 
 %post
 /sbin/install-info %{_infodir}/diff.info.gz /etc/info-dir
@@ -75,7 +77,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS README
+%doc {NEWS,README}.gz
+
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/diff.info*gz
 %{_mandir}/man1/*
@@ -98,21 +101,3 @@ rm -rf $RPM_BUILD_ROOT
 - adde -q %setup parameter,
 - moved CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" from make 
   to configure (as a much safer solution).
-
-* Tue May 05 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Sun May 03 1998 Cristian Gafton <gafton@redhat.com>
-- fixed spec file to reference/use the $RPM_BUILD_ROOT always
-
-* Wed Dec 31 1997 Otto Hammersmith <otto@redhat.com>
-- fixed where it looks for 'pr' (%{_bindir}, rather than /bin)
-
-* Fri Oct 17 1997 Donnie Barnes <djb@redhat.com>
-- added BuildRoot
-
-* Sun Sep 14 1997 Erik Troan <ewt@redhat.com>
-- uses install-info
-
-* Mon Jun 02 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
