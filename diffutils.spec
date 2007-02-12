@@ -1,8 +1,8 @@
 Summary:	A GNU collection of diff utilities
-Summary(de.UTF-8):   GNU-Sammlung von diff-Utilities
-Summary(fr.UTF-8):   Utilitaires diff de GNU
-Summary(pl.UTF-8):   Narzędzia diff GNU
-Summary(tr.UTF-8):   GNU dosya karşılaştırma araçları
+Summary(de.UTF-8):	GNU-Sammlung von diff-Utilities
+Summary(fr.UTF-8):	Utilitaires diff de GNU
+Summary(pl.UTF-8):	Narzędzia diff GNU
+Summary(tr.UTF-8):	GNU dosya karşılaştırma araçları
 Name:		diffutils
 Version:	2.8.7
 Release:	4
