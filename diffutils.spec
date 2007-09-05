@@ -5,7 +5,7 @@ Summary(pl.UTF-8):	Narzędzia diff GNU
 Summary(tr.UTF-8):	GNU dosya karşılaştırma araçları
 Name:		diffutils
 Version:	2.8.7
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://alpha.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
