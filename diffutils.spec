@@ -5,7 +5,7 @@ Summary(pl.UTF-8):	Narzędzia diff GNU
 Summary(tr.UTF-8):	GNU dosya karşılaştırma araçları
 Name:		diffutils
 Version:	2.8.7
-Release:	5.1
+Release:	5
 License:	GPL
 Group:		Applications/Text
 Source0:	ftp://alpha.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
@@ -19,7 +19,6 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.14.1
 BuildRequires:	texinfo
-Provides:	diff
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
