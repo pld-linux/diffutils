@@ -60,6 +60,7 @@ plików.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+rm m4/extensions.m4
 
 %build
 %{__aclocal} -I m4
