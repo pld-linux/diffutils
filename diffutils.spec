@@ -4,12 +4,12 @@ Summary(fr.UTF-8):	Utilitaires diff de GNU
 Summary(pl.UTF-8):	Narzędzia diff GNU
 Summary(tr.UTF-8):	GNU dosya karşılaştırma araçları
 Name:		diffutils
-Version:	2.8.7
-Release:	5
+Version:	2.9
+Release:	1
 License:	GPL
 Group:		Applications/Text
-Source0:	ftp://alpha.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
-# Source0-md5:	18d6587cb915e7aa110a5d463d6ed156
+Source0:	ftp://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
+# Source0-md5:	d6bc1bdc874ddb14cfed4d1655a0dbbe
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	34a7ab56f975ff7e439ea13923ec8ae4
 Patch0:		%{name}-info.patch
@@ -60,7 +60,6 @@ plików.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-rm m4/extensions.m4
 
 %build
 %{__aclocal} -I m4
