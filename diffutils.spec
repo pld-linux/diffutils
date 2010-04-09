@@ -6,18 +6,18 @@ Summary(tr.UTF-8):	GNU dosya karşılaştırma araçları
 Name:		diffutils
 Version:	2.9
 Release:	1
-License:	GPL
+License:	GPL v3+
 Group:		Applications/Text
-Source0:	ftp://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
 # Source0-md5:	d6bc1bdc874ddb14cfed4d1655a0dbbe
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	34a7ab56f975ff7e439ea13923ec8ae4
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 URL:		http://www.gnu.org/software/diffutils/
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake
-BuildRequires:	gettext-devel >= 0.14.1
+BuildRequires:	autoconf >= 2.61
+BuildRequires:	automake >= 1:1.11
+BuildRequires:	gettext-devel >= 0.17
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -83,15 +83,15 @@ bzip2 -dc %{SOURCE1} | tar xvf - -C $RPM_BUILD_ROOT%{_mandir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc NEWS README
+%doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/diff.info*
 %{_mandir}/man1/*
