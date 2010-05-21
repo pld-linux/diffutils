@@ -4,12 +4,12 @@ Summary(fr.UTF-8):	Utilitaires diff de GNU
 Summary(pl.UTF-8):	Narzędzia diff GNU
 Summary(tr.UTF-8):	GNU dosya karşılaştırma araçları
 Name:		diffutils
-Version:	2.9
+Version:	3.0
 Release:	1
 License:	GPL v3+
 Group:		Applications/Text
-Source0:	http://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.gz
-# Source0-md5:	d6bc1bdc874ddb14cfed4d1655a0dbbe
+Source0:	http://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.xz
+# Source0-md5:	7624eb7e6b53ea3ce38958a092d2216e
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	34a7ab56f975ff7e439ea13923ec8ae4
 Patch0:		%{name}-info.patch
@@ -18,7 +18,9 @@ URL:		http://www.gnu.org/software/diffutils/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
+BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -92,9 +94,15 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/cmp
+%attr(755,root,root) %{_bindir}/diff
+%attr(755,root,root) %{_bindir}/diff3
+%attr(755,root,root) %{_bindir}/sdiff
 %{_infodir}/diff.info*
-%{_mandir}/man1/*
+%{_mandir}/man1/cmp.1*
+%{_mandir}/man1/diff.1*
+%{_mandir}/man1/diff3.1*
+%{_mandir}/man1/sdiff.1*
 %lang(de) %{_mandir}/de/man1/*
 %lang(es) %{_mandir}/es/man1/*
 %lang(fr) %{_mandir}/fr/man1/*

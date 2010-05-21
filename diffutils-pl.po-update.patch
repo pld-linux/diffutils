@@ -1,620 +1,87 @@
---- diffutils-2.9/po/pl.po.orig	2010-02-11 10:26:32.000000000 +0100
-+++ diffutils-2.9/po/pl.po	2010-02-13 17:32:02.000000000 +0100
-@@ -1,18 +1,18 @@
- # Polish translations for the GNU diffutils messages
--# Copyright (C) 1996, 2002, 2004, 2009 Free Software Foundation, Inc.
-+# Copyright (C) 1996, 2002, 2004, 2009, 2010 Free Software Foundation, Inc.
- # This file is distributed under the same license as the diffutils package.
--# Rafał Maszkowski <rzm@icm.edu.pl>, 1996, 2002, 2004, 2009.
-+# Rafał Maszkowski <rzm@icm.edu.pl>, 1996, 2002, 2004, 2009, 2010.
- # Contributions:
--# Paweł Krawczyk <kravietz@pipeta.chemia.pk.edu.pl>, 1996
-+# Paweł Krawczyk <kravietz@pipeta.chemia.pk.edu.pl>, 1996.
- # 23 corrections - Jakub Bogusz <qboosh@pld-linux.org>, 2004.
- # my „smart" mutt needs this line
+--- diffutils-3.0/po/pl.po.orig	2010-05-03 17:01:41.000000000 +0200
++++ diffutils-3.0/po/pl.po	2010-05-21 09:32:21.502938422 +0200
+@@ -9,10 +9,10 @@
  #
  msgid ""
  msgstr ""
--"Project-Id-Version: GNU diffutils 2.8.7\n"
-+"Project-Id-Version: GNU diffutils 2.9\n"
+-"Project-Id-Version: GNU diffutils 2.9\n"
++"Project-Id-Version: GNU diffutils 3.0\n"
  "Report-Msgid-Bugs-To: bug-diffutils@gnu.org\n"
- "POT-Creation-Date: 2010-02-11 10:26+0100\n"
--"PO-Revision-Date: 2009-01-30 22:00+0100\n"
-+"PO-Revision-Date: 2010-02-13 17:30+0100\n"
+ "POT-Creation-Date: 2010-05-03 17:01+0200\n"
+-"PO-Revision-Date: 2010-02-13 17:30+0100\n"
++"PO-Revision-Date: 2010-05-21 09:27+0200\n"
  "Last-Translator: Rafał Maszkowski <rzm@icm.edu.pl>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"
-@@ -84,54 +84,54 @@
- msgstr "dziwny plik"
+@@ -99,9 +99,9 @@
+ msgstr "%s: opcja '%c%s' nie może mieć argumentu\n"
  
- #: lib/getopt.c:529 lib/getopt.c:545
+ #: lib/getopt.c:637 lib/getopt.c:656
 -#, fuzzy, c-format
 +#, c-format
- msgid "%s: option '%s' is ambiguous\n"
--msgstr "%s: opcja `%s' nie jest jednoznaczna\n"
-+msgstr "%s: opcja '%s' nie jest jednoznaczna\n"
+ msgid "%s: option '--%s' requires an argument\n"
+-msgstr "%s: opcja '%s' wymaga argumentu\n"
++msgstr "%s: opcja '--%s' wymaga argumentu\n"
  
- #: lib/getopt.c:578 lib/getopt.c:582
+ #: lib/getopt.c:694 lib/getopt.c:697
+ #, c-format
+@@ -134,9 +134,9 @@
+ msgstr "%s: opcja '-W %s' nie może mieć argumentu\n"
+ 
+ #: lib/getopt.c:962 lib/getopt.c:980
 -#, fuzzy, c-format
 +#, c-format
- msgid "%s: option '--%s' doesn't allow an argument\n"
--msgstr "%s: opcja `--%s' nie może mieć argumentu\n"
-+msgstr "%s: opcja '--%s' nie może mieć argumentu\n"
- 
- #: lib/getopt.c:591 lib/getopt.c:596
--#, fuzzy, c-format
-+#, c-format
- msgid "%s: option '%c%s' doesn't allow an argument\n"
--msgstr "%s: opcja `%c%s' nie może mieć argumentu\n"
-+msgstr "%s: opcja '%c%s' nie może mieć argumentu\n"
- 
- #: lib/getopt.c:639 lib/getopt.c:658 lib/getopt.c:961 lib/getopt.c:980
--#, fuzzy, c-format
-+#, c-format
- msgid "%s: option '%s' requires an argument\n"
--msgstr "%s: opcja `%s' wymaga argumentu\n"
-+msgstr "%s: opcja '%s' wymaga argumentu\n"
- 
- #: lib/getopt.c:696 lib/getopt.c:699
--#, fuzzy, c-format
-+#, c-format
- msgid "%s: unrecognized option '--%s'\n"
--msgstr "%s: nierozpoznana opcja `--%s'\n"
-+msgstr "%s: nierozpoznana opcja '--%s'\n"
- 
- #: lib/getopt.c:707 lib/getopt.c:710
--#, fuzzy, c-format
-+#, c-format
- msgid "%s: unrecognized option '%c%s'\n"
--msgstr "%s: nierozpoznana opcja `%c%s'\n"
-+msgstr "%s: nierozpoznana opcja '%c%s'\n"
- 
- #: lib/getopt.c:759 lib/getopt.c:762
--#, fuzzy, c-format
-+#, c-format
- msgid "%s: invalid option -- '%c'\n"
--msgstr "%s: błędna opcja -- %c\n"
-+msgstr "%s: błędna opcja -- '%c'\n"
- 
- #: lib/getopt.c:812 lib/getopt.c:829 lib/getopt.c:1032 lib/getopt.c:1050
--#, fuzzy, c-format
-+#, c-format
- msgid "%s: option requires an argument -- '%c'\n"
--msgstr "%s: opcja wymaga argumentu -- %c\n"
-+msgstr "%s: opcja wymaga argumentu -- '%c'\n"
- 
- #: lib/getopt.c:882 lib/getopt.c:898
--#, fuzzy, c-format
-+#, c-format
- msgid "%s: option '-W %s' is ambiguous\n"
--msgstr "%s: opcja `-W %s' jest niejednoznaczna\n"
-+msgstr "%s: opcja '-W %s' jest niejednoznaczna\n"
- 
- #: lib/getopt.c:922 lib/getopt.c:940
--#, fuzzy, c-format
-+#, c-format
- msgid "%s: option '-W %s' doesn't allow an argument\n"
--msgstr "%s: opcja `-W %s' nie może mieć argumentu\n"
-+msgstr "%s: opcja '-W %s' nie może mieć argumentu\n"
+ msgid "%s: option '-W %s' requires an argument\n"
+-msgstr "%s: opcja '%s' wymaga argumentu\n"
++msgstr "%s: opcja '-W %s' wymaga argumentu\n"
  
  #. TRANSLATORS:
  #. Get translations for open and closing quotation marks.
-@@ -154,11 +154,11 @@
- #. and use glyphs suitable for your language.
- #: lib/quotearg.c:272
- msgid "`"
--msgstr ""
-+msgstr "„"
+@@ -457,9 +457,9 @@
+ msgstr "Pliki %s i %s różnią się\n"
  
- #: lib/quotearg.c:273
- msgid "'"
--msgstr ""
-+msgstr "”"
- 
- #: lib/regcomp.c:135
- msgid "Success"
-@@ -238,67 +238,70 @@
- 
- #: lib/xfreopen.c:35
- msgid "stdin"
--msgstr ""
-+msgstr "standardowe wejście"
- 
- #: lib/xfreopen.c:36
- msgid "stdout"
--msgstr ""
-+msgstr "standardowe wyjście"
- 
- #: lib/xfreopen.c:37
- msgid "stderr"
--msgstr ""
-+msgstr "standardowe wyjście błędu"
- 
- #: lib/xfreopen.c:38
--#, fuzzy
- msgid "unknown stream"
--msgstr "Nieznany błąd systemu"
-+msgstr "nieznany strumień"
- 
- #: lib/xfreopen.c:39
- #, c-format
- msgid "failed to reopen %s with mode %s"
--msgstr ""
-+msgstr "nie udało się ponownie otworzyć %s z uprawnieniami %s"
- 
- #: lib/xstrtol-error.c:63
+ #: src/analyze.c:462
 -#, fuzzy, c-format
 +#, c-format
- msgid "invalid %s%s argument `%s'"
--msgstr "błędna wartość --bytes `%s'"
-+msgstr "błędny argument %s%s: `%s'"
+ msgid "Binary files %s and %s differ\n"
+-msgstr "Pliki %s i %s różnią się\n"
++msgstr "Pliki binarne %s i %s różnią się\n"
  
- #: lib/xstrtol-error.c:68
--#, fuzzy, c-format
-+#, c-format
- msgid "invalid suffix in %s%s argument `%s'"
--msgstr "błędna długość horyzontu `%s'"
-+msgstr "błędny przyrostek argumentu %s%s: `%s'"
- 
- #: lib/xstrtol-error.c:72
- #, c-format
- msgid "%s%s argument `%s' too large"
--msgstr ""
-+msgstr "argument %s%s `%s' jest za duży"
- 
- #: lib/version-etc.c:74
- #, c-format
- msgid "Packaged by %s (%s)\n"
--msgstr ""
-+msgstr "Pakowane przez %s (%s)\n"
- 
- #: lib/version-etc.c:77
- #, c-format
- msgid "Packaged by %s\n"
--msgstr ""
-+msgstr "Pakowane przez %s\n"
- 
- #. TRANSLATORS: Translate "(C)" to the copyright symbol
- #. (C-in-a-circle), if this symbol is available in the user's
- #. locale.  Otherwise, do not translate "(C)"; leave it as-is.
- #: lib/version-etc.c:84
- msgid "(C)"
--msgstr ""
-+msgstr "(C)"
- 
- #: lib/version-etc.c:86
- msgid ""
- "\n"
--"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl."
--"html>.\n"
-+"License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.\n"
- "This is free software: you are free to change and redistribute it.\n"
- "There is NO WARRANTY, to the extent permitted by law.\n"
- "\n"
- msgstr ""
-+"\n"
-+"Licencja GPLv3+: GNU GPL wersja 3 albo późniejsza http://gnu.org/licenses/gpl.html\n"
-+"To jest wolne oprogramowanie: masz prawo je zmieniać i rozpowszechniać.\n"
-+"Autorzy nie dają ŻADNYCH GWARANCJI w granicach dozwolonych prawem.\n"
-+"\n"
- 
- #. TRANSLATORS: %s denotes an author name.
- #: lib/version-etc.c:102
-@@ -413,30 +416,33 @@
- #. "Report translation bugs to <...>\n" with the address for translation
- #. bugs (typically your translation team's web or email address).
- #: lib/version-etc.c:245
--#, fuzzy, c-format
-+#, c-format
- msgid ""
- "\n"
- "Report bugs to: %s\n"
--msgstr "Informacje o błędach: bug-gnu-utils@gnu.org ."
-+msgstr ""
-+"\n"
-+"O błędach programu poinformuj %s\n"
-+"O błędach tłumaczenia poinformuj translation-team-pl@lists.sourceforge.net\n"
- 
- #: lib/version-etc.c:247
--#, fuzzy, c-format
-+#, c-format
- msgid "Report %s bugs to: %s\n"
--msgstr "Informacje o błędach: bug-gnu-utils@gnu.org ."
-+msgstr "Raporty o błędach %s wysyłaj do %s\n"
- 
- #: lib/version-etc.c:251
- #, c-format
- msgid "%s home page: <%s>\n"
--msgstr ""
-+msgstr "strona domowa %s: %s\n"
- 
- #: lib/version-etc.c:253
- #, c-format
- msgid "%s home page: <http://www.gnu.org/software/%s/>\n"
--msgstr ""
-+msgstr "strona domowa %s: http://www.gnu.org/software/%s/\n"
- 
- #: lib/version-etc.c:256
- msgid "General help using GNU software: <http://www.gnu.org/gethelp/>\n"
--msgstr ""
-+msgstr "Pomoc w używaniu oprogramowania GNU: http://www.gnu.org/gethelp/\n"
- 
- #: src/analyze.c:457 src/diff.c:1258
- #, c-format
-@@ -455,7 +461,7 @@
- #. This is a proper name. See the gettext manual, section Names.
- #: src/cmp.c:44
- msgid "David MacKenzie"
--msgstr ""
-+msgstr "David MacKenzie"
- 
- #: src/cmp.c:118 src/diff.c:829 src/diff3.c:415 src/sdiff.c:178
- #, c-format
-@@ -496,14 +502,12 @@
- msgstr "-i SKOK1:SKOK2  --ignore-initial=SKOK1:SKOK2"
- 
- #: src/cmp.c:164
--msgid ""
--"  Skip the first SKIP1 bytes of FILE1 and the first SKIP2 bytes of FILE2."
-+msgid "  Skip the first SKIP1 bytes of FILE1 and the first SKIP2 bytes of FILE2."
- msgstr "  Przeskoczenie pierwszych SKOK1 bajtów PLIKU1 i SKOK2 bajtów PLIKU2."
- 
- #: src/cmp.c:165
- msgid "-l  --verbose  Output byte numbers and values of all differing bytes."
--msgstr ""
--"-I  --verbose  Wypisanie położeń i kodów wszystkich różniących się bajtów."
-+msgstr "-I  --verbose  Wypisanie położeń i kodów wszystkich różniących się bajtów."
- 
- #: src/cmp.c:166
- msgid "-n LIMIT  --bytes=LIMIT  Compare at most LIMIT bytes."
-@@ -511,8 +515,7 @@
- 
- #: src/cmp.c:167
- msgid "-s  --quiet  --silent  Output nothing; yield exit status only."
--msgstr ""
--"-s  --quiet  --silnet  Bez wypisania wyników; tylko przekazanie statusu."
-+msgstr "-s  --quiet  --silnet  Bez wypisania wyników; tylko przekazanie statusu."
- 
- #: src/cmp.c:168 src/diff.c:918 src/diff3.c:444 src/sdiff.c:215
- msgid "-v  --version  Output version info."
-@@ -588,27 +591,27 @@
- #. This is a proper name. See the gettext manual, section Names.
- #: src/diff.c:47
- msgid "Paul Eggert"
--msgstr ""
-+msgstr "Paul Eggert"
- 
- #. This is a proper name. See the gettext manual, section Names.
- #: src/diff.c:48
- msgid "Mike Haertel"
--msgstr ""
-+msgstr "Mike Haertel"
- 
- #. This is a proper name. See the gettext manual, section Names.
- #: src/diff.c:49
- msgid "David Hayes"
--msgstr ""
-+msgstr "David Hayes"
- 
- #. This is a proper name. See the gettext manual, section Names.
- #: src/diff.c:50
- msgid "Richard Stallman"
--msgstr ""
-+msgstr "Richard Stallman"
- 
- #. This is a proper name. See the gettext manual, section Names.
- #: src/diff.c:51
- msgid "Len Tower"
--msgstr ""
-+msgstr "Len Tower"
- 
- #: src/diff.c:333
- #, c-format
-@@ -658,8 +661,7 @@
- 
- #: src/diff.c:846
- msgid "-i  --ignore-case  Ignore case differences in file contents."
--msgstr ""
--"-i  --ignore-case  Ignorowanie różnic między wielkimi i małymi literami."
-+msgstr "-i  --ignore-case  Ignorowanie różnic między wielkimi i małymi literami."
- 
- #: src/diff.c:847
- msgid "--ignore-file-name-case  Ignore case when comparing file names."
-@@ -692,8 +694,7 @@
- msgstr "-B  --ignore-blank-lines  Zignorowanie zmian liczby pustych linii."
- 
- #: src/diff.c:853 src/sdiff.c:200
--msgid ""
--"-I RE  --ignore-matching-lines=RE  Ignore changes whose lines all match RE."
-+msgid "-I RE  --ignore-matching-lines=RE  Ignore changes whose lines all match RE."
- msgstr ""
- "-I RE  --ignore-matching-lines=RE  Zignorowanie zmian w liniach pasujących\n"
- "                                   do RE."
-@@ -712,17 +713,14 @@
- 
- #: src/diff.c:860
- msgid ""
--"-c  -C NUM  --context[=NUM]  Output NUM (default 3) lines of copied "
--"context.\n"
--"-u  -U NUM  --unified[=NUM]  Output NUM (default 3) lines of unified "
--"context.\n"
-+"-c  -C NUM  --context[=NUM]  Output NUM (default 3) lines of copied context.\n"
-+"-u  -U NUM  --unified[=NUM]  Output NUM (default 3) lines of unified context.\n"
- "  --label LABEL  Use LABEL instead of file name.\n"
- "  -p  --show-c-function  Show which C function each change is in.\n"
- "  -F RE  --show-function-line=RE  Show the most recent line matching RE."
- msgstr ""
- "-c  -C ILE  --context[=ILE]  Skopiowanie ILE (domyślnie 2) linii kontekstu.\n"
--"-u  -U ILE  --unified[=ILE]  ILE (domyślnie 2) linii zunifikowanego "
--"kontekstu.\n"
-+"-u  -U ILE  --unified[=ILE]  ILE (domyślnie 2) linii zunifikowanego kontekstu.\n"
- "  --label ETYKIETA           Użycie ETYKIETY zamiast nazwy pliku.\n"
- "  -p  --show-c-function      Wskazanie funkcji C, w których są zmiany.\n"
- "  -F RE  --show-function-line=RE  Pokazanie ostatniej linii pasującej do RE."
-@@ -751,8 +749,7 @@
- "  --suppress-common-lines  Do not output common lines."
- msgstr ""
- "-y  --side-by-side  Wynik w dwóch kolumnach.\n"
--"  -W ILE  --width=ILE  Wypisanie najwyżej ILE (domyślnie 130) znaków w "
--"linii.\n"
-+"  -W ILE  --width=ILE  Wypisanie najwyżej ILE (domyślnie 130) znaków w linii.\n"
- "  --left-column  Wypisanie tylko lewej kolumny dla wspólnych linii.\n"
- "  --suppress-common-lines  Bez wypisywania wspólnych linii."
- 
-@@ -763,11 +760,9 @@
- "                         w `#ifdef NAZWA'."
- 
- #: src/diff.c:874
--msgid ""
--"--GTYPE-group-format=GFMT  Similar, but format GTYPE input groups with GFMT."
-+msgid "--GTYPE-group-format=GFMT  Similar, but format GTYPE input groups with GFMT."
- msgstr ""
--"--TYPG-group-format=GFMT   Podobnie, ale z użyciem GFMT do sformatowania "
--"grup\n"
-+"--TYPG-group-format=GFMT   Podobnie, ale z użyciem GFMT do sformatowania grup\n"
- "                           wejściowych typu TYPG"
- 
- #: src/diff.c:875
-@@ -777,11 +772,9 @@
- "                    wejściowych."
- 
- #: src/diff.c:876
--msgid ""
--"--LTYPE-line-format=LFMT  Similar, but format LTYPE input lines with LFMT."
-+msgid "--LTYPE-line-format=LFMT  Similar, but format LTYPE input lines with LFMT."
- msgstr ""
--"--TYPL-group-format=LFMT   Podobnie, ale z użyciem LFMT do sformatowania "
--"grup\n"
-+"--TYPL-group-format=LFMT   Podobnie, ale z użyciem LFMT do sformatowania grup\n"
- "                           wejściowych typu TYPL"
- 
- #: src/diff.c:877
-@@ -855,9 +848,10 @@
- msgstr "--tabsize=ILE  TAB-y co ILE (domyślnie 8) kolumn."
- 
- #: src/diff.c:902
--msgid ""
--"--suppress-blank-empty  Suppress space or tab before empty output lines."
-+msgid "--suppress-blank-empty  Suppress space or tab before empty output lines."
- msgstr ""
-+"--suppress-blank-empty  Bez wypisywania spacji i znaków TAB przed\n"
-+"                          pustymi liniami."
- 
- #: src/diff.c:904
- msgid "-r  --recursive  Recursively compare any subdirectories found."
-@@ -875,65 +869,52 @@
- 
- #: src/diff.c:907
- msgid "-s  --report-identical-files  Report when two files are the same."
--msgstr ""
--"-s  --report-identical-files  Informowanie gdy dwa pliki są takie same."
-+msgstr "-s  --report-identical-files  Informowanie gdy dwa pliki są takie same."
- 
- #: src/diff.c:908
- msgid "-x PAT  --exclude=PAT  Exclude files that match PAT."
- msgstr "-x WZÓR  --exclude=WZÓR  Wykluczenie plików pasujących do WZORU."
- 
- #: src/diff.c:909
--msgid ""
--"-X FILE  --exclude-from=FILE  Exclude files that match any pattern in FILE."
--msgstr ""
--"-X PLIK  --exclude-from=PLIK  Pominięcie plików pasujących do wzorców w "
--"PLIKU."
-+msgid "-X FILE  --exclude-from=FILE  Exclude files that match any pattern in FILE."
-+msgstr "-X PLIK  --exclude-from=PLIK  Pominięcie plików pasujących do wzorców w PLIKU."
- 
- #: src/diff.c:910
--msgid ""
--"-S FILE  --starting-file=FILE  Start with FILE when comparing directories."
--msgstr ""
--"-S PLIK  --starting-file=PLIK  Zacznij od PLIKU przy porównywaniu katalogów."
-+msgid "-S FILE  --starting-file=FILE  Start with FILE when comparing directories."
-+msgstr "-S PLIK  --starting-file=PLIK  Zacznij od PLIKU przy porównywaniu katalogów."
- 
- #: src/diff.c:911
--msgid ""
--"--from-file=FILE1  Compare FILE1 to all operands.  FILE1 can be a directory."
-+msgid "--from-file=FILE1  Compare FILE1 to all operands.  FILE1 can be a directory."
- msgstr ""
- "--from-file=PLIK1  Porównanie PLIKU1 z wszystkimi argumentami.\n"
- "                   PLIK1 może być katalogiem."
- 
- #: src/diff.c:912
--msgid ""
--"--to-file=FILE2  Compare all operands to FILE2.  FILE2 can be a directory."
-+msgid "--to-file=FILE2  Compare all operands to FILE2.  FILE2 can be a directory."
- msgstr ""
- "--to-file=PLIK2  Porównanie wszystkich argumentów z PLIKIEM2.\n"
- "                 PLIK2 może być katalogiem."
- 
- #: src/diff.c:914
- msgid "--horizon-lines=NUM  Keep NUM lines of the common prefix and suffix."
--msgstr ""
--"--horizon-lines=ILE  Zostawienie ILE linii wspólnego przedrostka i "
--"przyrostka."
-+msgstr "--horizon-lines=ILE  Zostawienie ILE linii wspólnego przedrostka i przyrostka."
- 
- #: src/diff.c:915 src/sdiff.c:211
- msgid "-d  --minimal  Try hard to find a smaller set of changes."
- msgstr "-d  --minimal  Usiłowanie znalezienia mniejszego zbioru zmian."
- 
- #: src/diff.c:916
--msgid ""
--"--speed-large-files  Assume large files and many scattered small changes."
-+msgid "--speed-large-files  Assume large files and many scattered small changes."
- msgstr "--speed-large-files  Założenie: duże pliki i rozrzucone małe zmiany."
- 
- #: src/diff.c:921
--msgid ""
--"FILES are `FILE1 FILE2' or `DIR1 DIR2' or `DIR FILE...' or `FILE... DIR'."
-+msgid "FILES are `FILE1 FILE2' or `DIR1 DIR2' or `DIR FILE...' or `FILE... DIR'."
- msgstr ""
- "PLIKI to `PLIK1 PLIK2' albo `KATALOG1 KATALOG2' albo `KATALOG PLIK...' albo\n"
- "PLIK... KATALOG'."
- 
- #: src/diff.c:922
--msgid ""
--"If --from-file or --to-file is given, there are no restrictions on FILES."
-+msgid "If --from-file or --to-file is given, there are no restrictions on FILES."
- msgstr ""
- "Jeżeli użyta jest opcja --from-file albo --to-file, nie ma ograniczeń co do\n"
- "PLIKÓW."
-@@ -988,7 +969,7 @@
- #. This is a proper name. See the gettext manual, section Names.
- #: src/diff3.c:42
- msgid "Randy Smith"
--msgstr ""
-+msgstr "Randy Smith"
- 
- #: src/diff3.c:314
- #, c-format
-@@ -1012,8 +993,7 @@
- 
- #: src/diff3.c:430
- msgid "-E  --show-overlap  Output unmerged changes, bracketing conflicts."
--msgstr ""
--"-E  --show-overlap  Wypisanie niezłączonych zmian, konflikty w nawiasach."
-+msgstr "-E  --show-overlap  Wypisanie niezłączonych zmian, konflikty w nawiasach."
- 
- #: src/diff3.c:431
- msgid "-A  --show-all  Output all changes, bracketing conflicts."
-@@ -1033,8 +1013,7 @@
- 
- #: src/diff3.c:436
- msgid "-m  --merge  Output merged file instead of ed script (default -A)."
--msgstr ""
--"-m   -merge  Wypisanie połączonych plików zamiast komend ed-a (domyślnie -A)."
-+msgstr "-m   -merge  Wypisanie połączonych plików zamiast komend ed-a (domyślnie -A)."
- 
- #: src/diff3.c:437
- msgid "-L LABEL  --label=LABEL  Use LABEL instead of file name."
-@@ -1109,12 +1088,12 @@
- #: src/dir.c:208
- #, c-format
- msgid "%s: recursive directory loop"
--msgstr ""
-+msgstr "%s: rekurencyjne zapętlenie katalogów"
- 
- #. This is a proper name. See the gettext manual, section Names.
- #: src/sdiff.c:42
- msgid "Thomas Lord"
--msgstr ""
-+msgstr "Thomas Lord"
- 
- #: src/sdiff.c:193
- msgid "-o FILE  --output=FILE  Operate interactively, sending output to FILE."
-@@ -1141,8 +1120,7 @@
- msgstr "-s  --suppress-common-lines  Bez wypisania wspólnych linii."
- 
- #: src/sdiff.c:212
--msgid ""
--"-H  --speed-large-files  Assume large files and many scattered small changes."
-+msgid "-H  --speed-large-files  Assume large files and many scattered small changes."
- msgstr "-H  --speed-large-files  Duże pliki i rozrzucone małe zmiany."
- 
- #: src/sdiff.c:225
-@@ -1163,7 +1141,6 @@
- msgstr "oba mające być porównane pliki to katalogi"
- 
- #: src/sdiff.c:868
--#, fuzzy
- msgid ""
- "ed:\tEdit then use both versions, each decorated with a header.\n"
- "eb:\tEdit then use both versions.\n"
-@@ -1178,59 +1155,29 @@
- msgstr ""
- "ed:\tEdycja i użycie obu wersji, każdej z nagłówkiem.\n"
- "eb:\tEdycja i użycie obu wersji.\n"
--"el:\tiUżycie wersji po lewej.\n"
--"er:\tEdycja i użycie wersji po prawej.\n"
--"e:\tEdycja nowej wersji.\n"
--"l:\tUżycie wersji po lewej.\n"
--"r:\tUżycie wersji po prawej.\n"
-+"el albo e1:\tiUżycie wersji po lewej.\n"
-+"er albo e2:\tEdycja i użycie wersji po prawej.\n"
-+"e:\tUsunięcie obu wersji i edycja nowej.\n"
-+"l albo 1:\tUżycie wersji po lewej.\n"
-+"r albo 2:\tUżycie wersji po prawej.\n"
+ #: src/analyze.c:713 src/diff3.c:1419 src/util.c:545
+ msgid "No newline at end of file"
+@@ -1205,35 +1205,3 @@
  "s:\tDołączenie wspólnych linii bez informowania o tym.\n"
  "v:\tDołączenie wspólnych linii z podaniem informacji.\n"
  "q:\tZakończenie.\n"
- 
--#, fuzzy
--#~ msgid "fclose failed"
--#~ msgstr "nieudany odczyt"
 -
--#, fuzzy
--#~ msgid "pipe failed"
--#~ msgstr "zapis nieudany"
+-#~ msgid "%s: illegal option -- %c\n"
+-#~ msgstr "%s: nielegalna opcja -- %c\n"
 -
--#, fuzzy
--#~ msgid "fork failed"
--#~ msgstr "nieudany odczyt"
--
--#, fuzzy
--#~ msgid "fdopen failed"
--#~ msgstr "nieudany odczyt"
--
--#, fuzzy
--#~ msgid "waitpid failed"
--#~ msgstr "zapis nieudany"
--
--#, fuzzy
--#~ msgid "mkstemp failed"
--#~ msgstr "zapis nieudany"
--
--#, fuzzy
--#~ msgid "dup2 failed"
--#~ msgstr "nieudany odczyt"
--
- #~ msgid "%s: illegal option -- %c\n"
- #~ msgstr "%s: nielegalna opcja -- %c\n"
- 
--#~ msgid "Report bugs to <bug-gnu-utils@gnu.org>."
--#~ msgstr "Informacje o błędach: bug-gnu-utils@gnu.org ."
--
- #~ msgid ""
+-#~ msgid ""
 -#~ "This is free software; see the source for copying conditions.  There is "
 -#~ "NO\n"
 -#~ "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR "
 -#~ "PURPOSE.\n"
-+#~ "This is free software; see the source for copying conditions.  There is NO\n"
-+#~ "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
- #~ msgstr ""
- #~ "Ten program jest darmowy; warunki kopiowania są opisane w źródłach.\n"
- #~ "Autorzy nie dają ŻADNYCH gwarancji, w tym również gwarancji PRZYDATNOŚCI\n"
- #~ "DO SPRZEDAŻY LUB DO KONKRETNYCH CELÓW.\n"
- 
-+#~ msgid "Report bugs to <bug-gnu-utils@gnu.org>."
-+#~ msgstr "Informacje o błędach: bug-gnu-utils@gnu.org ."
-+
- #~ msgid "`-%ld' option is obsolete; use `-%c %ld'"
- #~ msgstr "opcja `-%ld' jest przestarzała, użyj `-%c %ld'"
- 
-@@ -1244,5 +1191,4 @@
- #~ msgstr "nie zadziałał program pomocniczy `%s'"
- 
- #~ msgid "subsidiary program `%s' failed (exit status %d)"
+-#~ msgstr ""
+-#~ "Ten program jest darmowy; warunki kopiowania są opisane w źródłach.\n"
+-#~ "Autorzy nie dają ŻADNYCH gwarancji, w tym również gwarancji PRZYDATNOŚCI\n"
+-#~ "DO SPRZEDAŻY LUB DO KONKRETNYCH CELÓW.\n"
+-
+-#~ msgid "Report bugs to <bug-gnu-utils@gnu.org>."
+-#~ msgstr "Informacje o błędach: bug-gnu-utils@gnu.org ."
+-
+-#~ msgid "`-%ld' option is obsolete; use `-%c %ld'"
+-#~ msgstr "opcja `-%ld' jest przestarzała, użyj `-%c %ld'"
+-
+-#~ msgid "`-%ld' option is obsolete; omit it"
+-#~ msgstr "opcja `-%ld' jest przestarzała, opuść ją"
+-
+-#~ msgid "subsidiary program `%s' not found"
+-#~ msgstr "nie znaleziono programu pomocniczego `%s'"
+-
+-#~ msgid "subsidiary program `%s' failed"
+-#~ msgstr "nie zadziałał program pomocniczy `%s'"
+-
+-#~ msgid "subsidiary program `%s' failed (exit status %d)"
 -#~ msgstr ""
 -#~ "program pomocniczy `%s' zakończył się z błędem (status wyjściowy %d)"
-+#~ msgstr "program pomocniczy `%s' zakończył się z błędem (status wyjściowy %d)"
