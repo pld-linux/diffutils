@@ -1,27 +1,135 @@
---- diffutils-2.8.7/doc/diff.texi.orig	2004-04-12 09:44:35.000000000 +0200
-+++ diffutils-2.8.7/doc/diff.texi	2004-04-24 02:09:42.175301032 +0200
-@@ -35,18 +35,13 @@
+--- diffutils-3.1/doc/diffutils.texi.orig	2011-08-04 18:57:00.000000000 +0200
++++ diffutils-3.1/doc/diffutils.texi	2011-08-14 06:50:59.566389453 +0200
+@@ -29,18 +29,14 @@
  
  @c Debian install-info (up through at least version 1.9.20) uses only the
  @c first dircategory.  Put this one first, as it is more useful in practice.
 -@dircategory Individual utilities
 +@dircategory File utilities:
  @direntry
--* cmp: (diff)Invoking cmp.                      Compare 2 files byte by byte.
--* diff: (diff)Invoking diff.                    Compare 2 files line by line.
--* diff3: (diff)Invoking diff3.                  Compare 3 files line by line.
--* patch: (diff)Invoking patch.                  Apply a patch to a file.
--* sdiff: (diff)Invoking sdiff.                  Merge 2 files side-by-side.
+-* cmp: (diffutils)Invoking cmp.                 Compare 2 files byte by byte.
+-* diff: (diffutils)Invoking diff.               Compare 2 files line by line.
+-* diff3: (diffutils)Invoking diff3.             Compare 3 files line by line.
+-* patch: (diffutils)Invoking patch.             Apply a patch to a file.
+-* sdiff: (diffutils)Invoking sdiff.             Merge 2 files side-by-side.
 -@end direntry
 -
 -@dircategory Text creation and manipulation
 -@direntry
--* Diff: (diff).                 Comparing and merging files.
-+* cmp: (diff)cmp.			Compare 2 files byte by byte
-+* diff: (diff)diff.			Compare 2 files line by line
-+* diff3: (diff)diff3.			Compare 3 files line by line
-+* patch: (diff)patch.			Apply a patch to a file
-+* sdiff: (diff)sdiff.			Merge 2 files side-by-side
+-* Diffutils: (diffutils).       Comparing and merging files.
++* cmp: (diffutils)cmp.			Compare 2 files byte by byte
++* diff: (diffutils)diff.		Compare 2 files line by line
++* diff3: (diffutils)diff3.		Compare 3 files line by line
++* patch: (diffutils)patch.		Apply a patch to a file
++* sdiff: (diffutils)sdiff.		Merge 2 files side-by-side
++* Diffutils: (diffutils).		Comparing and merging files
  @end direntry
  
  @titlepage
+@@ -81,11 +77,11 @@
+ * Merging with patch::    Using @command{patch} to change old files into new ones.
+ * Making Patches::        Tips for making and using patch distributions.
+ 
+-* Invoking cmp::          Compare two files byte by byte.
+-* Invoking diff::         Compare two files line by line.
+-* Invoking diff3::        Compare three files line by line.
+-* Invoking patch::        Apply a diff file to an original.
+-* Invoking sdiff::        Side-by-side merge of file differences.
++* cmp::                   Compare two files byte by byte.
++* diff::                  Compare two files line by line.
++* diff3::                 Compare three files line by line.
++* patch::                 Apply a diff file to an original.
++* sdiff::                 Side-by-side merge of file differences.
+ 
+ * Standards conformance:: Conformance to the @acronym{POSIX} standard.
+ * Projects::              If you've found a bug or other shortcoming.
+@@ -407,7 +403,7 @@
+ the @option{-s}, @option{--quiet}, or @option{--silent} option to
+ suppress that information, so that @command{cmp}
+ produces no output and reports whether the files differ using only its
+-exit status (@pxref{Invoking cmp}).
++exit status (@pxref{cmp}).
+ 
+ @c Fix this.
+ Unlike @command{diff}, @command{cmp} cannot compare directories; it can only
+@@ -481,7 +477,7 @@
+ option to show the values of each differing byte in the two files.
+ With @acronym{GNU} @command{cmp}, you can also use the @option{-b} or
+ @option{--print-bytes} option to show the @acronym{ASCII} representation of
+-those bytes.  @xref{Invoking cmp}, for more information.
++those bytes.  @xref{cmp}, for more information.
+ 
+ If @command{diff3} thinks that any of the files it is comparing is binary
+ (a non-text file), it normally reports an error, because such
+@@ -1996,7 +1992,7 @@
+ on whether they are two-way or three-way, and lines are annotated by
+ their location in the input files.
+ 
+-@xref{Invoking diff3}, for more information on how to run @command{diff3}.
++@xref{diff3}, for more information on how to run @command{diff3}.
+ 
+ @menu
+ * Sample diff3 Input::    Sample @command{diff3} input for examples.
+@@ -2425,7 +2421,7 @@
+ With @command{sdiff}, you can merge two files interactively based on a
+ side-by-side @option{-y} format comparison (@pxref{Side by Side}).  Use
+ @option{--output=@var{file}} (@option{-o @var{file}}) to specify where to
+-put the merged text.  @xref{Invoking sdiff}, for more details on the
++put the merged text.  @xref{sdiff}, for more details on the
+ options to @command{sdiff}.
+ 
+ Another way to merge files interactively is to use the Emacs Lisp
+@@ -2550,7 +2546,7 @@
+ normally replaces each file @var{f} with its new version, putting reject
+ hunks (if any) into @samp{@var{f}.rej}.
+ 
+-@xref{Invoking patch}, for detailed information on the options to
++@xref{patch}, for detailed information on the options to
+ @command{patch}.
+ 
+ @menu
+@@ -3468,7 +3464,7 @@
+ lines for proper operation when patches do not exactly match the input
+ files.
+ 
+-@node Invoking cmp
++@node cmp
+ @chapter Invoking @command{cmp}
+ @cindex invoking @command{cmp}
+ @cindex @command{cmp} invocation
+@@ -3648,7 +3644,7 @@
+ (@samp{Yi} is a GNU extension to IEC 60027-2.)
+ @end table
+ 
+-@node Invoking diff
++@node diff
+ @chapter Invoking @command{diff}
+ @cindex invoking @command{diff}
+ @cindex @command{diff} invocation
+@@ -3965,7 +3961,7 @@
+ Use the side by side output format.  @xref{Side by Side Format}.
+ @end table
+ 
+-@node Invoking diff3
++@node diff3
+ @chapter Invoking @command{diff3}
+ @cindex invoking @command{diff3}
+ @cindex @command{diff3} invocation
+@@ -4088,7 +4084,7 @@
+ @xref{Which Changes}.
+ @end table
+ 
+-@node Invoking patch
++@node patch
+ @chapter Invoking @command{patch}
+ @cindex invoking @command{patch}
+ @cindex @command{patch} invocation
+@@ -4308,7 +4304,7 @@
+ 
+ @end table
+ 
+-@node Invoking sdiff
++@node sdiff
+ @chapter Invoking @command{sdiff}
+ @cindex invoking @command{sdiff}
+ @cindex @command{sdiff} invocation
