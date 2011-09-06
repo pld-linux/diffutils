@@ -4,12 +4,12 @@ Summary(fr.UTF-8):	Utilitaires diff de GNU
 Summary(pl.UTF-8):	Narzędzia diff GNU
 Summary(tr.UTF-8):	GNU dosya karşılaştırma araçları
 Name:		diffutils
-Version:	3.1
+Version:	3.2
 Release:	1
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	http://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.xz
-# Source0-md5:	fbb1d804849fa32ff5853f028a3be46f
+# Source0-md5:	26ff64c332429c830c154be46b393382
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	34a7ab56f975ff7e439ea13923ec8ae4
 Patch0:		%{name}-info.patch
@@ -68,7 +68,8 @@ plików.
 %{__autoconf}
 %{__automake}
 %configure \
-	PR_PROGRAM=/usr/bin/pr
+	PR_PROGRAM=/usr/bin/pr \
+	--disable-silent-rules
 
 %{__make}
 
