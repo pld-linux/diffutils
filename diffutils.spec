@@ -16,7 +16,7 @@ Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/diffutils/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	gettext-tools >= 0.17
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo
 BuildRequires:	xz
