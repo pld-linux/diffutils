@@ -1,5 +1,5 @@
---- diffutils-3.1/doc/diffutils.texi.orig	2011-08-04 18:57:00.000000000 +0200
-+++ diffutils-3.1/doc/diffutils.texi	2011-08-14 06:50:59.566389453 +0200
+--- diffutils-3.6/doc/diffutils.texi.orig	2017-05-06 23:36:17.000000000 +0200
++++ diffutils-3.6/doc/diffutils.texi	2017-06-08 18:40:24.143120198 +0200
 @@ -29,18 +29,14 @@
  
  @c Debian install-info (up through at least version 1.9.20) uses only the
@@ -41,9 +41,9 @@
 +* patch::                 Apply a diff file to an original.
 +* sdiff::                 Side-by-side merge of file differences.
  
- * Standards conformance:: Conformance to the @acronym{POSIX} standard.
+ * Standards conformance:: Conformance to the POSIX standard.
  * Projects::              If you've found a bug or other shortcoming.
-@@ -407,7 +403,7 @@
+@@ -418,7 +414,7 @@
  the @option{-s}, @option{--quiet}, or @option{--silent} option to
  suppress that information, so that @command{cmp}
  produces no output and reports whether the files differ using only its
@@ -52,16 +52,16 @@
  
  @c Fix this.
  Unlike @command{diff}, @command{cmp} cannot compare directories; it can only
-@@ -481,7 +477,7 @@
+@@ -486,7 +482,7 @@
  option to show the values of each differing byte in the two files.
- With @acronym{GNU} @command{cmp}, you can also use the @option{-b} or
- @option{--print-bytes} option to show the @acronym{ASCII} representation of
+ With GNU @command{cmp}, you can also use the @option{-b} or
+ @option{--print-bytes} option to show the ASCII representation of
 -those bytes.  @xref{Invoking cmp}, for more information.
 +those bytes.  @xref{cmp}, for more information.
  
  If @command{diff3} thinks that any of the files it is comparing is binary
  (a non-text file), it normally reports an error, because such
-@@ -1996,7 +1992,7 @@
+@@ -2008,7 +2004,7 @@
  on whether they are two-way or three-way, and lines are annotated by
  their location in the input files.
  
@@ -70,7 +70,7 @@
  
  @menu
  * Sample diff3 Input::    Sample @command{diff3} input for examples.
-@@ -2425,7 +2421,7 @@
+@@ -2437,7 +2433,7 @@
  With @command{sdiff}, you can merge two files interactively based on a
  side-by-side @option{-y} format comparison (@pxref{Side by Side}).  Use
  @option{--output=@var{file}} (@option{-o @var{file}}) to specify where to
@@ -79,7 +79,7 @@
  options to @command{sdiff}.
  
  Another way to merge files interactively is to use the Emacs Lisp
-@@ -2550,7 +2546,7 @@
+@@ -2562,7 +2558,7 @@
  normally replaces each file @var{f} with its new version, putting reject
  hunks (if any) into @samp{@var{f}.rej}.
  
@@ -88,7 +88,7 @@
  @command{patch}.
  
  @menu
-@@ -3468,7 +3464,7 @@
+@@ -3480,7 +3476,7 @@
  lines for proper operation when patches do not exactly match the input
  files.
  
@@ -97,7 +97,7 @@
  @chapter Invoking @command{cmp}
  @cindex invoking @command{cmp}
  @cindex @command{cmp} invocation
-@@ -3648,7 +3644,7 @@
+@@ -3665,7 +3661,7 @@
  (@samp{Yi} is a GNU extension to IEC 60027-2.)
  @end table
  
@@ -106,8 +106,8 @@
  @chapter Invoking @command{diff}
  @cindex invoking @command{diff}
  @cindex @command{diff} invocation
-@@ -3965,7 +3961,7 @@
- Use the side by side output format.  @xref{Side by Side Format}.
+@@ -4043,7 +4039,7 @@
+ Ignore white space at line end.  @xref{White Space}.
  @end table
  
 -@node Invoking diff3
@@ -115,7 +115,7 @@
  @chapter Invoking @command{diff3}
  @cindex invoking @command{diff3}
  @cindex @command{diff3} invocation
-@@ -4088,7 +4084,7 @@
+@@ -4166,7 +4162,7 @@
  @xref{Which Changes}.
  @end table
  
@@ -124,7 +124,7 @@
  @chapter Invoking @command{patch}
  @cindex invoking @command{patch}
  @cindex @command{patch} invocation
-@@ -4308,7 +4304,7 @@
+@@ -4386,7 +4382,7 @@
  
  @end table
  
