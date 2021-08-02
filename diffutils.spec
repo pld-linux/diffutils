@@ -4,17 +4,17 @@ Summary(fr.UTF-8):	Utilitaires diff de GNU
 Summary(pl.UTF-8):	Narzędzia diff GNU
 Summary(tr.UTF-8):	GNU dosya karşılaştırma araçları
 Name:		diffutils
-Version:	3.7
+Version:	3.8
 Release:	1
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	https://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.xz
-# Source0-md5:	4824adc0e95dbbf11dfbdfaad6a1e461
+# Source0-md5:	6a6b0fdc72acfe3f2829aab477876fbc
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	34a7ab56f975ff7e439ea13923ec8ae4
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/diffutils/
-BuildRequires:	autoconf >= 2.63
+BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-tools >= 0.19.2
 BuildRequires:	help2man
