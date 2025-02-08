@@ -1,6 +1,6 @@
---- diffutils-3.6/doc/diffutils.texi.orig	2017-05-06 23:36:17.000000000 +0200
-+++ diffutils-3.6/doc/diffutils.texi	2017-06-08 18:40:24.143120198 +0200
-@@ -29,18 +29,14 @@
+--- diffutils-3.11/doc/diffutils.texi.orig	2025-01-12 19:27:47.000000000 +0100
++++ diffutils-3.11/doc/diffutils.texi	2025-02-08 10:19:04.450891073 +0100
+@@ -32,18 +32,14 @@ A copy of the license is included in the
  
  @c Debian install-info (up through at least version 1.9.20) uses only the
  @c first dircategory.  Put this one first, as it is more useful in practice.
@@ -26,7 +26,7 @@
  @end direntry
  
  @titlepage
-@@ -81,11 +77,11 @@
+@@ -84,11 +80,11 @@ A copy of the license is included in the
  * Merging with patch::    Using @command{patch} to change old files into new ones.
  * Making Patches::        Tips for making and using patch distributions.
  
@@ -43,7 +43,7 @@
  
  * Standards conformance:: Conformance to the POSIX standard.
  * Projects::              If you've found a bug or other shortcoming.
-@@ -418,7 +414,7 @@
+@@ -452,7 +448,7 @@ file is a prefix of the other.  You can
  the @option{-s}, @option{--quiet}, or @option{--silent} option to
  suppress that information, so that @command{cmp}
  produces no output and reports whether the files differ using only its
@@ -52,7 +52,7 @@
  
  @c Fix this.
  Unlike @command{diff}, @command{cmp} cannot compare directories; it can only
-@@ -486,7 +482,7 @@
+@@ -520,7 +516,7 @@ If you want to compare two files byte by
  option to show the values of each differing byte in the two files.
  With GNU @command{cmp}, you can also use the @option{-b} or
  @option{--print-bytes} option to show the ASCII representation of
@@ -61,7 +61,7 @@
  
  If @command{diff3} thinks that any of the files it is comparing is binary
  (a non-text file), it normally reports an error, because such
-@@ -2008,7 +2004,7 @@
+@@ -2074,7 +2070,7 @@ differences without surrounding context.
  on whether they are two-way or three-way, and lines are annotated by
  their location in the input files.
  
@@ -70,7 +70,7 @@
  
  @menu
  * Sample diff3 Input::    Sample @command{diff3} input for examples.
-@@ -2437,7 +2433,7 @@
+@@ -2503,7 +2499,7 @@ The @option{-i} option requires one of t
  With @command{sdiff}, you can merge two files interactively based on a
  side-by-side @option{-y} format comparison (@pxref{Side by Side}).  Use
  @option{--output=@var{file}} (@option{-o @var{file}}) to specify where to
@@ -79,7 +79,7 @@
  options to @command{sdiff}.
  
  Another way to merge files interactively is to use the Emacs Lisp
-@@ -2562,7 +2558,7 @@
+@@ -2628,7 +2624,7 @@ patch the file as well as it can.  If no
  normally replaces each file @var{f} with its new version, putting reject
  hunks (if any) into @samp{@var{f}.rej}.
  
@@ -88,7 +88,7 @@
  @command{patch}.
  
  @menu
-@@ -3480,7 +3476,7 @@
+@@ -3546,7 +3542,7 @@ but bear in mind that @command{patch} ty
  lines for proper operation when patches do not exactly match the input
  files.
  
@@ -97,8 +97,8 @@
  @chapter Invoking @command{cmp}
  @cindex invoking @command{cmp}
  @cindex @command{cmp} invocation
-@@ -3665,7 +3661,7 @@
- (@samp{Yi} is a GNU extension to IEC 60027-2.)
+@@ -3740,7 +3736,7 @@ quettabyte: @math{10^{30} = 1,000,000,00
+ quebibyte: @math{2^{100} = 1,267,650,600,228,229,401,496,703,205,376}.
  @end table
  
 -@node Invoking diff
@@ -106,7 +106,7 @@
  @chapter Invoking @command{diff}
  @cindex invoking @command{diff}
  @cindex @command{diff} invocation
-@@ -4043,7 +4039,7 @@
+@@ -4118,7 +4114,7 @@ Use the side by side output format.  @xr
  Ignore white space at line end.  @xref{White Space}.
  @end table
  
@@ -115,7 +115,7 @@
  @chapter Invoking @command{diff3}
  @cindex invoking @command{diff3}
  @cindex @command{diff3} invocation
-@@ -4166,7 +4162,7 @@
+@@ -4241,7 +4237,7 @@ Like @option{-e}, except output only the
  @xref{Which Changes}.
  @end table
  
@@ -124,7 +124,7 @@
  @chapter Invoking @command{patch}
  @cindex invoking @command{patch}
  @cindex @command{patch} invocation
-@@ -4386,7 +4382,7 @@
+@@ -4461,7 +4457,7 @@ headers use UTC.  @xref{Patching Timesta
  
  @end table
  
