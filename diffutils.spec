@@ -5,7 +5,7 @@ Summary(pl.UTF-8):	Narzędzia diff GNU
 Summary(tr.UTF-8):	GNU dosya karşılaştırma araçları
 Name:		diffutils
 Version:	3.12
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Text
 Source0:	https://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.xz
@@ -13,6 +13,7 @@ Source0:	https://ftp.gnu.org/gnu/diffutils/%{name}-%{version}.tar.xz
 Source1:	http://www.mif.pg.gda.pl/homepages/ankry/man-PLD/%{name}-non-english-man-pages.tar.bz2
 # Source1-md5:	34a7ab56f975ff7e439ea13923ec8ae4
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-CVE-2026-53910.patch
 URL:		http://www.gnu.org/software/diffutils/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
@@ -61,6 +62,7 @@ plików.
 %prep
 %setup -q
 %patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %{__aclocal} -I m4
